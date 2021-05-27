@@ -1,18 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+// react-icons
 import { IconContext } from "react-icons"
 import { GiTwirlyFlower } from 'react-icons/gi'
 
 export default function Navbar() {
     return (
         <>
-            {/* <nav className="navbar">
-                <div className="navbar-container">                    
-                    <Link to="/" className="navbar-logo">
-                    <GiTwirlyFlower /><span className="fw-bold">zenshin</span>dojo
-                    </Link>
-                </div>
-            </nav> */}
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
                     <Link className="navbar-brand fs-2 ms-3" to="/">
@@ -46,7 +40,8 @@ export default function Navbar() {
                             </li>
                         </ul>
                         <ul className="navbar-nav mx-3">
-                            <li><Link className="nav-link" to="/">Acceder</Link></li>
+                            <li><Link className="nav-link" to="/login">Acceder</Link></li>
+                            <li><Link className="nav-link" to="/signup">Registrar</Link></li>
                         </ul>
                     </div>
                 </div>
