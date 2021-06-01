@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Signup from './components/Signup'
 import Login from './components/Login'
 import Dashboard from "./components/Dashboard";
+import Index from "./components/Index";
 
 // PROTEGEMOS LAS RUTAS:
 const isAuthenticated = () => {
@@ -24,7 +25,7 @@ const MyRoute = (props) => {
 };
 // ruta pública
 const PublicRoute = (props) => {
-    // si tiene token redirecciona a pantalla de login, si no redirige al index
+    // si tiene token redirecciona a pantalla de dashboard, si no redirige al index
     return isAuthenticated() ? <Redirect to="/dashboard" /> : <Route {...props} />;
 };
 
@@ -32,10 +33,10 @@ function App() {
     return (
             <Router>
                 <Navbar />
-                <PublicRoute path="/" exact />
+                <PublicRoute path="/" exact component={Index}/>
                 <MyRoute path="/dashboard" component={Dashboard} />
                 <Route path="/signup" exact component={Signup} />
-                <MyRoute path="/login" exact component={Login} />
+                <Route path="/login" exact component={Login} />
             </Router>
     );
 }

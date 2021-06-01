@@ -1,10 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 // react-icons
 import { IconContext } from "react-icons"
 import { GiTwirlyFlower } from 'react-icons/gi'
 
 export default function Navbar() {
+
+    // ver si el usuario está logueado:
+    const [menu, setMenu] = useState(false)
+    useEffect(() => {
+        // si existe el token en la sesión, está logueado
+        if (sessionStorage.getItem('token')) {
+            setMenu(true)
+        }
+
+    }, [])
+
+    // borra los datos de sesión
+    const logout = () => {
+        sessionStorage.clear()
+        window.location.href = '/'
+    }
+
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -24,7 +41,7 @@ export default function Navbar() {
                             </li>
                             <li className="nav-item mx-3">
                                 <Link className="nav-link" to="/">Sobre nosotros</Link>
-                            </li>                            
+                            </li>
                             <li className="nav-item dropdown mx-3">
                                 <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Actividades
@@ -39,10 +56,29 @@ export default function Navbar() {
                                 <Link className="nav-link" to="/">Contacto</Link>
                             </li>
                         </ul>
-                        <ul className="navbar-nav mx-3">
-                            <li><Link className="nav-link" to="/login">Acceder</Link></li>
-                            <li><Link className="nav-link" to="/signup">Registrar</Link></li>
-                        </ul>
+
+                        {/* usuario logueado: si menu es true está logueado y por tanto aparecen salir y bienvenido usuario */}
+                        {
+
+                            menu ?
+                                <ul className="navbar-nav">
+                                    <li className="nav-item mx-3">
+                                        <Link className="nav-link" aria-current="page" to="/">Bienvenido {sessionStorage.getItem('name')}</Link>
+                                    </li>
+                                    <li className="nav-item mx-3">
+                                        <Link className="nav-link" to="/" onClick={() => logout()}>Salir</Link>
+                                    </li>
+                                </ul>
+                                :
+                                <ul className="navbar-nav">
+                                    <li className="nav-item mx-3">
+                                        <Link className="nav-link" to="/login">Acceder</Link>
+                                    </li>
+                                    <li className="nav-item mx-3">
+                                        <Link className="nav-link" to="/signup">Registrar</Link>
+                                    </li>
+                                </ul>
+                        }
                     </div>
                 </div>
             </nav>

@@ -39,7 +39,7 @@ export default function Signup() {
                 // al panel de usuario
                 setTimeout(function () {
                     window.location.href = '/login'
-                }, 2000)
+                }, 1500)
             })
             .catch((error) => {
                 // Error

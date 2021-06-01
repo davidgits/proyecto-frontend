@@ -1,0 +1,42 @@
+.hero__text span {
+	font-size: 16px;
+	color: #ffffff;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	display: block;
+	margin-bottom: 30px;
+	position: relative;
+	top: 100px;
+	opacity: 0;
+	-webkit-transition: all, 0.2s;
+	-moz-transition: all, 0.2s;
+	-ms-transition: all, 0.2s;
+	-o-transition: all, 0.2s;
+	transition: all, 0.2s;
+}
+.hero__text h2 {
+	font-size: 70px;
+	line-height: 80px;
+	color: #ffffff;
+	margin-bottom: 50px;
+	position: relative;
+	top: 100px;
+	opacity: 0;
+	-webkit-transition: all, 0.5s;
+	-moz-transition: all, 0.5s;
+	-ms-transition: all, 0.5s;
+	-o-transition: all, 0.5s;
+	transition: all, 0.5s;
+}
+
+.hero__text .btn-primary {
+	position: relative;
+	top: 100px;
+	opacity: 0;
+	-webkit-transition: all, 0.8s;
+	-moz-transition: all, 0.8s;
+	-ms-transition: all, 0.8s;
+	-o-transition: all, 0.8s;
+	transition: all, 0.8s;
+}
