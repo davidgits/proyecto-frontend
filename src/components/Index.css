@@ -1,42 +1,94 @@
-.hero__text span {
-	font-size: 16px;
-	color: #ffffff;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 4px;
-	display: block;
-	margin-bottom: 30px;
-	position: relative;
-	top: 100px;
-	opacity: 0;
-	-webkit-transition: all, 0.2s;
-	-moz-transition: all, 0.2s;
-	-ms-transition: all, 0.2s;
-	-o-transition: all, 0.2s;
-	transition: all, 0.2s;
+/* CARRUSEL */
+
+/* Carousel base class */
+.carousel {
+    margin-bottom: 4rem;
 }
-.hero__text h2 {
-	font-size: 70px;
-	line-height: 80px;
-	color: #ffffff;
-	margin-bottom: 50px;
-	position: relative;
-	top: 100px;
-	opacity: 0;
-	-webkit-transition: all, 0.5s;
-	-moz-transition: all, 0.5s;
-	-ms-transition: all, 0.5s;
-	-o-transition: all, 0.5s;
-	transition: all, 0.5s;
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption,
+.carousel-caption-off, h1 {
+    bottom: 3rem;
+    font-family: "Montserrat", sans-serif;
+    z-index: 10;
 }
 
-.hero__text .btn-primary {
-	position: relative;
-	top: 100px;
-	opacity: 0;
-	-webkit-transition: all, 0.8s;
-	-moz-transition: all, 0.8s;
-	-ms-transition: all, 0.8s;
-	-o-transition: all, 0.8s;
-	transition: all, 0.8s;
+/* Declare heights because of positioning of img element */
+.carousel-item {
+    object-fit: scale-down;
+    height: 75vh;
+    width: 100%;
+}
+.carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* min-width: 100%; */
+    /* height: 32rem; */
+    max-width: 100%;
+    height: auto;
+}
+
+.carousel-item {
+    bottom: 3rem;
+    z-index: 10;
+}
+
+/* Carousel caption */
+
+.carousel-caption-off {
+    display: none;
+}
+
+.carousel-caption .btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 9;
+}
+
+.carousel-caption .btn-primary,
+.carousel-caption-off .btn-primary {
+    color: #fff;
+    background-color: var(--sakura-3);
+    border-color: var(--sakura-2);
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-item {
+        height: 55vh;
+    }
+    .carousel-caption {
+        display: none;
+    }
+    .carousel-caption-off {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .carousel-item {
+        height: 30vh;
+    }
+}
+
+/* efecto botón carousel-caption en pantallas pc */
+
+@media screen and (min-width: 992px) {
+    .carousel-caption .btn:before {
+        content: "";
+        background: var(--sakura-2);
+        width: 4px;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        -webkit-transition: all 0.5s ease-in-out 0s;
+        -moz-transition: all 0.5s ease-in-out 0s;
+        -ms-transition: all 0.5s ease-in-out 0s;
+        -o-transition: all 0.5s ease-in-out 0s;
+        transition: all 0.5s ease-in-out 0s;
+    }
+    .carousel-caption p a.btn:hover:before {
+        width: 100%;
+    }
 }

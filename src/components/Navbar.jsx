@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 // react-icons
 import { IconContext } from "react-icons"
 import { GiTwirlyFlower } from 'react-icons/gi'
+import { FaEnvelope, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
+// css
+import "./navbar.css"
 
 export default function Navbar() {
 
@@ -24,13 +27,42 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            {/* top navigation */}
+            <nav className="navbar navbar-expand-lg navbar-light bg-light navtop p-0">
+                <ul className="navbar-nav ms-auto me-4 ">
+                    <li className="nav-item me-3 my-auto">
+                        TEL: (+34) 654 789 321
+                    </li>
+                    <li className="nav-item me-5 my-auto mailto">
+                        <FaEnvelope /><a href="mailto:zenshindojosevilla@gmail.com?subject=Mail from our Website"> zenshindojosevilla@gmail.com</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="https://www.facebook.com/zenshindojosevilla" target="true">
+                            <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: '1.2em' } }}><FaFacebook /></IconContext.Provider>
+                        </a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="https://www.facebook.com/zenshindojosevilla" target="true">
+                            <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: '1.2em' } }}><FaTwitter /></IconContext.Provider>
+                        </a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="https://www.instagram.com/isshindojo" target="true">
+                            <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: '1.2em' } }}><FaInstagram /></IconContext.Provider>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+            {/* navigation */}
+            <nav className="navbar navbar-expand-lg navbar-light bg-light pt-0">
                 <div className="container-fluid">
                     <Link className="navbar-brand fs-2 ms-3" to="/">
-                        <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: '2em' } }}>
+                        <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: '2em', color: '#e9b1cd' } }}>
                             <GiTwirlyFlower />
                         </IconContext.Provider>
-                        <span className="fw-bold">&nbsp;zenshin</span>dojo</Link>
+                        <span className="fw-bold">&nbsp;zenshin</span>dojo
+                    </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

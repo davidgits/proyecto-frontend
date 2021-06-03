@@ -1,0 +1,72 @@
+.nihon {
+    font-family: 'Kosugi Maru', sans-serif;;
+}
+
+.set-bg {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+}
+
+.home-about {
+	padding-bottom: 0;
+}
+
+.home__about__pic {
+	margin-right: -20px;
+	padding-right: 30px;
+}
+
+.home__about__pic__item {
+	height: 620px;
+	width: calc(50% - 20px);
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.home__about__pic__item__inner {
+	height: 300px;
+	margin-bottom: 20px;
+}
+
+.home__about__text {
+	padding-top: 35px;
+}
+
+.home__about__text .section-title {
+	text-align: left;
+	margin-bottom: 24px;
+}
+
+.home__about__text span {
+	display: block;
+	font-size: 16px;
+	color: #404D80;
+	margin-bottom: 12px;
+}
+
+.home__about__text p.para-2 {
+	margin-bottom: 40px;
+}
+
+.home__about__text a.btn {
+    background-color: var(--sakura-2);
+    border: var(--sakura-1);
+}
+
+.image_welcome {
+    width: 91%;
+}
+.image_welcome_2 {
+    width: 100%;
+}
+
+/*---------------------
+  Helper CSS
+-----------------------*/
+
+.section-title {
+	margin-bottom: 45px;
+	text-align: center;
+}
