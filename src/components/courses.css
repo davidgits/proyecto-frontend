@@ -5,7 +5,7 @@
 }
 
 .upcoming-classes.top-classes {
-	background: #f5f6fa;
+	background: var(--sakura-5);
 }
 
 .classes__item {
@@ -29,7 +29,7 @@
 	color: #ffffff;
 	display: inline-block;
 	padding: 7px 16px 4px;
-	background: #5768AD;
+	background: var(--sakura-2);
 	position: absolute;
 	left: 0;
 	top: 10px;
@@ -71,6 +71,7 @@
 .classes__item__text h4 a {
 	color: #001943;
 	line-height: 36px;
+	text-decoration: none;
 }
 
 .classes__item__text h6 {
@@ -86,11 +87,12 @@
 .classes__item__text .class-btn {
 	font-size: 14px;
 	font-weight: 700;
-	color: #5768AD;
+	color: var(--sakura-2);
 	display: inline-block;
 	border: 1px solid rgba(155, 158, 163, 0.2);
 	padding: 10px 20px 7px;
 	border-radius: 2px;
+	text-decoration: none;
 	-webkit-transition: all 0.4s;
 	-moz-transition: all 0.4s;
 	-ms-transition: all 0.4s;
@@ -99,8 +101,8 @@
 }
 
 .classes__item__text .class-btn:hover {
-	background: #5768AD;
-	border: 1px solid #5768AD;
+	background: var(--sakura-2);
+	border: 1px solid var(--sakura-2);
 	color: #ffffff;
 }
 
@@ -134,11 +136,11 @@
 	margin-bottom: 5px;
 }
 
-.set-bg {
+/* .set-bg {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: top center;
-}
+} */
 
 .spad {
 	padding-top: 100px;

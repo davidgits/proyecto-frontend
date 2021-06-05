@@ -2,6 +2,7 @@ import React from 'react'
 import "./index.css"
 import Welcome from './Welcome'
 import Cards from './Cards'
+import Courses from './Courses'
 
 export default function Index() {
 
@@ -21,14 +22,14 @@ export default function Index() {
                 </div>
                 <div className="container">
                     <div className="carousel-caption">
-                        <h1>Centro cultural japonés</h1>
+                        <h2 className="carousel-caption-title">Centro cultural japonés</h2>
                         <p>Some representative placeholder content for the second slide of the carousel.</p>
                         <p><a className="btn btn-lg btn-primary" href="/">Learn more</a></p>
                     </div>
                 </div>
                 <div className="container">
                     <div className="carousel-caption-off">
-                        <h1>Centro cultural japonés</h1>
+                        <h2 className="section-title">Centro cultural japonés</h2>
                         <p>Some representative placeholder content for the second slide of the carousel.</p>
                         <p><a className="btn btn-md btn-primary" href="/">Learn more</a></p>
                         <hr />
@@ -38,8 +39,9 @@ export default function Index() {
             {/* bienvenida */}
             <Welcome/>
             {/* actividades */}
-            <h1 className="text-center">Nuestras disciplinas</h1>
             <Cards />
+            {/* cursos */}
+            <Courses />
         </>
     )
 }

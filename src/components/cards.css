@@ -13,6 +13,7 @@
 }
 
 .overflow {
+    height: 250px;
     overflow: hidden;
 }
 
@@ -22,4 +23,11 @@
 
 .card-img-top:hover {
     transform: scale(1.8);
+}
+
+.section-title h2 {
+	font-size: 3rem;
+	color: #263246;
+	margin-top: 2em;
+	margin-bottom: 5px;
 }

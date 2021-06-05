@@ -68,13 +68,13 @@ export default function Navbar() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav mx-auto">
-                            <li className="nav-item mx-3">
+                            <li className="nav-item mx-2">
                                 <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
                             </li>
-                            <li className="nav-item mx-3">
-                                <Link className="nav-link" to="/">Sobre nosotros</Link>
+                            <li className="nav-item mx-2">
+                                <Link className="nav-link" to="/about">La Escuela</Link>
                             </li>
-                            <li className="nav-item dropdown mx-3">
+                            <li className="nav-item dropdown mx-2">
                                 <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Actividades
                                 </Link>
@@ -84,7 +84,7 @@ export default function Navbar() {
                                     <li><Link className="dropdown-item" to="/">Meditación Zen</Link></li>
                                 </ul>
                             </li>
-                            <li className="nav-item mx-3">
+                            <li className="nav-item mx-2">
                                 <Link className="nav-link" to="/">Contacto</Link>
                             </li>
                         </ul>
@@ -94,19 +94,19 @@ export default function Navbar() {
 
                             menu ?
                                 <ul className="navbar-nav">
-                                    <li className="nav-item mx-3">
+                                    <li className="nav-item mx-2">
                                         <Link className="nav-link" aria-current="page" to="/">Bienvenido {sessionStorage.getItem('name')}</Link>
                                     </li>
-                                    <li className="nav-item mx-3">
+                                    <li className="nav-item mx-2">
                                         <Link className="nav-link" to="/" onClick={() => logout()}>Salir</Link>
                                     </li>
                                 </ul>
                                 :
                                 <ul className="navbar-nav">
-                                    <li className="nav-item mx-3">
+                                    <li className="nav-item mx-2">
                                         <Link className="nav-link" to="/login">Acceder</Link>
                                     </li>
-                                    <li className="nav-item mx-3">
+                                    <li className="nav-item mx-2">
                                         <Link className="nav-link" to="/signup">Registrar</Link>
                                     </li>
                                 </ul>

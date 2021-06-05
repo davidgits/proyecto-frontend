@@ -34,7 +34,7 @@ export default function Welcome() {
                                         <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: '4em' } }}>
                                             <GiTwirlyFlower />
                                         </IconContext.Provider>
-                                        <h2 className="nihon align-self-center ms-2">前進道場 へようこそ!</h2>
+                                        <h3 className="nihon align-self-center ms-2">前進道場 へようこそ!</h3>
                                     </div>
                                     <h2>Bienvenidos a Zenshin Dojo</h2>
                                 </div>

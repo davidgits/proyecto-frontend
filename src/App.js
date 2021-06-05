@@ -8,7 +8,7 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import Dashboard from "./components/Dashboard";
 import Index from "./components/Index";
-import Courses from './components/Courses'
+import About from './components/About'
 import Footer from './components/Footer'
 
 // PROTEGEMOS LAS RUTAS:
@@ -36,10 +36,10 @@ function App() {
             <Router>
                 <Navbar />
                 <PublicRoute path="/" exact component={Index}/>
+                <Route path="/about" component={About}/>
                 <MyRoute path="/dashboard" component={Dashboard} />
                 <Route path="/signup" exact component={Signup} />
                 <Route path="/login" exact component={Login} />
-                <Courses/>
                 <Footer/>
             </Router>
     );

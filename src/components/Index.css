@@ -35,6 +35,10 @@
 
 /* Carousel caption */
 
+.carousel-caption-title {
+	font-size: 3rem;
+}
+
 .carousel-caption-off {
     display: none;
 }
@@ -51,6 +55,8 @@
     background-color: var(--sakura-3);
     border-color: var(--sakura-2);
 }
+
+/* MEDIA QUERIES */
 
 @media screen and (max-width: 768px) {
     .carousel-item {
