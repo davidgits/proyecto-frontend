@@ -10,7 +10,7 @@ export default function Card({title, subtitle, imageURL, text, url}) {
             </div>
             <div className="card-body text-light">
                 <h4 className="card-title">{title}</h4>
-                <h6 class="card-subtitle mb-2 text-muted">{subtitle ? subtitle: "Card subtitle"}</h6>
+                <h6 className="card-subtitle mb-2 text-muted">{subtitle ? subtitle: "Card subtitle"}</h6>
                 <p className="card-text text-secondary">
                     {
                         // si texto existe utiliza texto, si no utiliza el lorem

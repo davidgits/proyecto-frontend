@@ -54,7 +54,7 @@ export default function Courses() {
                 <div className="row">
                     {
                         courses.map((course) => (
-                            <div className="col-lg-4 col-md-6 col-sm-6">
+                            <div className="col-lg-4 col-md-6 col-sm-6" key={course.id}>
                                 <Course
                                     imageURL={course.imageURL}
                                     date={course.date}

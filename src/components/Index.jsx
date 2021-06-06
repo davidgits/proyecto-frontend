@@ -3,6 +3,7 @@ import "./index.css"
 import Welcome from './Welcome'
 import Cards from './Cards'
 import Courses from './Courses'
+import ContactForm from './ContactForm'
 
 export default function Index() {
 
@@ -42,6 +43,9 @@ export default function Index() {
             <Cards />
             {/* cursos */}
             <Courses />
+            {/* formulario contacto */}
+            <ContactForm />
+
         </>
     )
 }
