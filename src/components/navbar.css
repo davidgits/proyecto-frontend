@@ -30,8 +30,15 @@
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
     .navtop {
         display: none;
+    }
+}
+/* toggle-button */
+@media (min-width:992px) and (max-width: 1370px) {
+    .container-fluid {
+        display: flex;
+        flex-direction: column;
     }
 }

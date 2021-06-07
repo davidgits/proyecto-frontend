@@ -73,7 +73,7 @@ export default function Navbar() {
                                 <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
                             </li>
                             <li className="nav-item mx-2">
-                                <Link className="nav-link" to="/about">La Escuela</Link>
+                                <Link className="nav-link" to="/about">El Dojo</Link>
                             </li>
                             <li className="nav-item dropdown mx-2">
                                 <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -89,10 +89,10 @@ export default function Navbar() {
                                 </ul>
                             </li>
                             <li className="nav-item mx-2">
-                                <Link className="nav-link" to="/">Horarios y Precios</Link>
+                                <Link className="nav-link" to="/">Horarios</Link>
                             </li>
                             <li className="nav-item mx-2">
-                                <Link className="nav-link" to="/">Cursos y Talleres</Link>
+                                <Link className="nav-link" to="/">Cursos</Link>
                             </li>
                             <li className="nav-item mx-2">
                                 <Link className="nav-link" to="/">Galería</Link>
