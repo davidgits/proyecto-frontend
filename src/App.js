@@ -9,6 +9,7 @@ import Login from './components/Login'
 import Dashboard from "./components/Dashboard";
 import Index from "./components/Index";
 import About from './components/About'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 // PROTEGEMOS LAS RUTAS:
@@ -37,6 +38,7 @@ function App() {
                 <Navbar />
                 <PublicRoute path="/" exact component={Index}/>
                 <Route path="/about" component={About}/>
+                <Route path="/contact" component={Contact} />
                 <MyRoute path="/dashboard" component={Dashboard} />
                 <Route path="/signup" exact component={Signup} />
                 <Route path="/login" exact component={Login} />

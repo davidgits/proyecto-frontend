@@ -24,6 +24,12 @@
     text-decoration-line: none;
 }
 
+/* ANIMATIONS */
+
+
+
+/* MEDIA QUERIES */
+
 @media screen and (max-width: 1200px) {
     .navtop {
         display: none;

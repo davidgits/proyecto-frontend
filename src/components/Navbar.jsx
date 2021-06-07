@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { IconContext } from "react-icons"
 import { GiTwirlyFlower } from 'react-icons/gi'
 import { FaEnvelope, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
+
 // css
 import "./navbar.css"
 
@@ -61,7 +62,7 @@ export default function Navbar() {
                         <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: '2em', color: '#e9b1cd' } }}>
                             <GiTwirlyFlower />
                         </IconContext.Provider>
-                        <span className="fw-bold">&nbsp;zenshin</span>dojo
+                            <span className="fw-bold">&nbsp; zenshin</span>dojo
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -80,12 +81,24 @@ export default function Navbar() {
                                 </Link>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li><Link className="dropdown-item" to="/">Aikido</Link></li>
-                                    <li><Link className="dropdown-item" to="/">Jiu-Jitsu</Link></li>
+                                    <li><Link className="dropdown-item" to="/">Karate-do</Link></li>
                                     <li><Link className="dropdown-item" to="/">Meditación Zen</Link></li>
+                                    <li><Link className="dropdown-item" to="/">Yoga</Link></li>
+                                    <li><Link className="dropdown-item" to="/">Tai-Chi</Link></li>
+                                    <li><Link className="dropdown-item" to="/">Idioma Japonés</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item mx-2">
-                                <Link className="nav-link" to="/">Contacto</Link>
+                                <Link className="nav-link" to="/">Horarios y Precios</Link>
+                            </li>
+                            <li className="nav-item mx-2">
+                                <Link className="nav-link" to="/">Cursos y Talleres</Link>
+                            </li>
+                            <li className="nav-item mx-2">
+                                <Link className="nav-link" to="/">Galería</Link>
+                            </li>
+                            <li className="nav-item mx-2">
+                                <Link className="nav-link" to="/contact">Contacto</Link>
                             </li>
                         </ul>
 
