@@ -40,8 +40,8 @@ function App() {
                 <Route path="/about" component={About}/>
                 <Route path="/contact" component={Contact} />
                 <MyRoute path="/dashboard" component={Dashboard} />
-                <Route path="/signup" exact component={Signup} />
-                <Route path="/login" exact component={Login} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/login" component={Login} />
                 <Footer/>
             </Router>
     );

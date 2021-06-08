@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 // react-icons
 import { IconContext } from "react-icons"
 import { GiTwirlyFlower } from 'react-icons/gi'
@@ -26,9 +26,12 @@ export default function Navbar() {
         window.location.href = '/'
     }
 
+    // cierra automáticamente el menú desplegable en pantallas pequeñas al hacer click en enlace
+    const [isCollapsed, setCollapsed] = useState(true)
+
     return (
         <>
-            {/* top navigation */}
+            {/* TOP NAVBAR START */}
             <nav className="navbar navbar-expand-lg navbar-light bg-light navtop p-0">
                 <ul className="navbar-nav ms-auto me-4 ">
                     <li className="nav-item me-3 my-auto">
@@ -53,27 +56,32 @@ export default function Navbar() {
                         </a>
                     </li>
                 </ul>
-
+                {/* TOP NAVBAR END */}
             </nav>
-            {/* navigation */}
+            {/* NAVBAR START */}
             <nav className="navbar navbar-expand-lg navbar-light bg-light pt-0">
                 <div className="container-fluid">
+                    {/* LOGO START */}
                     <Link className="navbar-brand fs-2 ms-3" to="/">
                         <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: '2em', color: '#e9b1cd' } }}>
                             <GiTwirlyFlower />
                         </IconContext.Provider>
-                            <span className="fw-bold">&nbsp; zenshin</span>dojo
+                        <span className="fw-bold">&nbsp; zenshin</span>dojo
                     </Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    {/* LOGO END */}
+                    {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> */}
+                    <button className={isCollapsed ? "navbar-toggler collapsed" : "navbar-toggler"} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded={isCollapsed ? "false" : "true"} aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                    {/* {isCollapsed?collapse navbar-collapse show : collapse navbar-collapse} */}
+                    {/* <div className="collapse navbar-collapse" id="navbarNavDropdown"> */}
+                    <div className={isCollapsed ? "collapse navbar-collapse" : "collapse navbar-collapse show"} id="navbarNavDropdown">
                         <ul className="navbar-nav mx-auto">
                             <li className="nav-item mx-2">
-                                <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
+                                <NavLink className="nav-link" exact activeClassName="active" aria-current="page" to="/">Inicio</NavLink>
                             </li>
                             <li className="nav-item mx-2">
-                                <Link className="nav-link" to="/about">El Dojo</Link>
+                                <NavLink className="nav-link" activeClassName="active" to="/about" onClick={() => setCollapsed(!isCollapsed)}>El Dojo</NavLink>
                             </li>
                             <li className="nav-item dropdown mx-2">
                                 <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -98,7 +106,7 @@ export default function Navbar() {
                                 <Link className="nav-link" to="/">Galería</Link>
                             </li>
                             <li className="nav-item mx-2">
-                                <Link className="nav-link" to="/contact">Contacto</Link>
+                                <NavLink className="nav-link" activeClassName="active" to="/contact">Contacto</NavLink>
                             </li>
                         </ul>
 
@@ -127,6 +135,7 @@ export default function Navbar() {
                     </div>
                 </div>
             </nav>
+            {/* NAVBAR END */}
         </>
     )
 }

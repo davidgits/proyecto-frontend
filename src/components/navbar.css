@@ -1,10 +1,16 @@
 /* NAVBAR */
+
 .nav-item {
     font-family: "Montserrat", sans-serif;
 }
 
 .nav-link {
     text-transform: uppercase;
+}
+
+.nav-link.active {
+    color: var(--sakura-1) !important;
+    text-shadow: var(--sakura-3) !important;
 }
 
 /* Top navbar */

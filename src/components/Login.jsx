@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 // alertas
 import Swal from 'sweetalert2'
+// css
+import './login.css'
 
 export default function Login() {
 
@@ -74,12 +76,12 @@ export default function Login() {
     return (
         <div className='container-fluid mt-3'>
             <div className="row">
-                <div className="col-md-6 mx-auto">
+                <div className="col-sm-8 col-md-6 mx-auto p-5">
                     <div className="card">
                         <div className="container text-center">
                         </div>
                         <div className="card-header text-center">
-                            <h4>Inicio Sesión</h4>
+                            <h4>Acceso Usuarios</h4>
                         </div>
                         <div className="card-body">
                             <form onSubmit={signin}>
