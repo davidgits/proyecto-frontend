@@ -24,7 +24,7 @@ const isAuthenticated = () => {
 // ruta privada
 const MyRoute = (props) => {
     // si tiene token muestra la ruta con las props, si no redirige al login
-    return isAuthenticated() ? <Route {...props} /> : <Redirect to="/" />;
+    return isAuthenticated() ? <Route {...props} /> : <Redirect to="/login" />;
 };
 // ruta pública
 const PublicRoute = (props) => {

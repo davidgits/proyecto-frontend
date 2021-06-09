@@ -9,7 +9,7 @@ export default function Map() {
         <div className="map">
             <iframe
                 src="https://www.google.com/maps/embed/v1/search?q=zenshin%20dojo%20sevilla&key=AIzaSyD4F-sk35nMCvSV7fuYaYOiwOzJ3_zlGxU"
-                height="500" style={{ border: 0 }} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                height="500" style={{ border: 0 }} allowfullscreen="" aria-hidden="false" tabindex="0" title="location-map"></iframe>
             <div className="map-inside">
                 <ImLocation />
                 <div className="inside-widget">

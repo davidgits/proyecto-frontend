@@ -21,11 +21,11 @@ export default function Footer() {
                                     <span className="fw-bold">&nbsp;zenshin</span><span className="footer__text__dojo">dojo</span>
                                 </section>
                                 <ul className="p-0">
-                                    <li><FaRegClock /> Mon - Fri: 6: 30am - 07: 45pm</li>
-                                    <li><FaRegClock /> Sat - Sun: 8: 30am - 05: 45pm</li>
+                                    <li><FaRegClock /> Lun - Vie: 7: 30am - 07: 45pm</li>
+                                    <li><FaRegClock /> Sab - Dom: 8: 30am - 14: 30pm</li>
                                 </ul>
                                 <form action="/" className="subscribe-form">
-                                    <input type="text" placeholder="Your Email" />
+                                    <input type="text" className="form-control" placeholder="Suscríbete a nuestro boletín de noticias" />
                                     <button type="submit"><FaRegPaperPlane /></button>
                                 </form>
                             </div>

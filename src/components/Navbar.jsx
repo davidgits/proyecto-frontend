@@ -27,6 +27,7 @@ export default function Navbar() {
     }
 
     // cierra automáticamente el menú desplegable en pantallas pequeñas al hacer click en enlace
+    // TODO revisar código de cambio de estado
     const [isCollapsed, setCollapsed] = useState(true)
 
     return (
@@ -70,12 +71,12 @@ export default function Navbar() {
                     </Link>
                     {/* LOGO END */}
                     {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> */}
-                    <button className={isCollapsed ? "navbar-toggler collapsed" : "navbar-toggler"} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded={isCollapsed ? "false" : "true"} aria-label="Toggle navigation">
+                    <button className={`navbar-toggler ${isCollapsed ? "collapsed" : ""}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded={isCollapsed ? "false" : "true"} aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     {/* {isCollapsed?collapse navbar-collapse show : collapse navbar-collapse} */}
                     {/* <div className="collapse navbar-collapse" id="navbarNavDropdown"> */}
-                    <div className={isCollapsed ? "collapse navbar-collapse" : "collapse navbar-collapse show"} id="navbarNavDropdown">
+                    <div className={`collapse navbar-collapse ${isCollapsed ? "" : "show"}`} id="navbarNavDropdown">
                         <ul className="navbar-nav mx-auto">
                             <li className="nav-item mx-2">
                                 <NavLink className="nav-link" exact activeClassName="active" aria-current="page" to="/">Inicio</NavLink>
@@ -116,7 +117,7 @@ export default function Navbar() {
                             menu ?
                                 <ul className="navbar-nav">
                                     <li className="nav-item mx-2">
-                                        <Link className="nav-link" aria-current="page" to="/">Bienvenido {sessionStorage.getItem('name')}</Link>
+                                        <Link className="nav-link" aria-current="page" to="/dashboard">Bienvenido {sessionStorage.getItem('name')}</Link>
                                     </li>
                                     <li className="nav-item mx-2">
                                         <Link className="nav-link" to="/" onClick={() => logout()}>Salir</Link>
@@ -127,9 +128,9 @@ export default function Navbar() {
                                     <li className="nav-item mx-2">
                                         <Link className="nav-link" to="/login">Acceder</Link>
                                     </li>
-                                    <li className="nav-item mx-2">
+                                    {/* <li className="nav-item mx-2">
                                         <Link className="nav-link" to="/signup">Registrar</Link>
-                                    </li>
+                                    </li> */}
                                 </ul>
                         }
                     </div>

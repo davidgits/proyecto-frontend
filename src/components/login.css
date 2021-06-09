@@ -1,0 +1,9 @@
+.login {
+    background-image: var(--waves);
+}
+
+.btn {
+    background-color: var(--sakura-3) !important;
+    border-color: var(--sakura-2) !important;
+}
+

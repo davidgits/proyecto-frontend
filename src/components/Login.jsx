@@ -74,9 +74,9 @@ export default function Login() {
     }
 
     return (
-        <div className='container-fluid mt-3'>
+        <div className='container-fluid login'>
             <div className="row">
-                <div className="col-sm-8 col-md-6 mx-auto p-5">
+                <div className="col-sm-8 col-md-6 col-lg-4 mx-auto p-5">
                     <div className="card">
                         <div className="container text-center">
                         </div>
@@ -111,6 +111,9 @@ export default function Login() {
                                     <button type="submit" className='btn btn-primary'>Aceptar</button>
                                 </div>
                             </form>
+                            <div className="form-text p-3">
+                                Si no tiene las credenciales de acceso, contacte con nosotros a través del correo <a href="mailto:zenshindojosevilla@gmail.com">zenshindojosevilla@gmail.com</a>
+                            </div>
                         </div>
                     </div>
                 </div>

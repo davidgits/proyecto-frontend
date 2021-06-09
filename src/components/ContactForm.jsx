@@ -32,7 +32,7 @@ export default function Contactform() {
                 if (error.response) {
                     const message = error.response.data.message
                     // TODO
-                // implementar sweet alerts
+                    // implementar sweet alerts
                     console.log(message);
                 } else if (error.request) {
                     console.log(error.request);
@@ -47,7 +47,7 @@ export default function Contactform() {
 
     return (
         <section className="contact mb-3">
-            <div className="container">
+            <div className="container fluid mt-3">
                 <div className="contact__text">
                     <div className="row">
                         <div className="col-lg-12">
@@ -64,6 +64,7 @@ export default function Contactform() {
                             <div className="col-lg-6">
                                 <input
                                     type="text"
+                                    className="form-control"
                                     name="name"
                                     onChange={(e) => setName(e.target.value)}
                                     placeholder="Nombre"
@@ -73,6 +74,7 @@ export default function Contactform() {
                             <div className="col-lg-6">
                                 <input
                                     type="email"
+                                    className="form-control"
                                     name="email"
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="Correo electrónico"
@@ -82,15 +84,16 @@ export default function Contactform() {
                             <div className="col-lg-6">
                                 <input
                                     type="phone"
+                                    className="form-control"
                                     name="phone"
                                     onChange={(e) => setPhone(e.target.value)}
-                                    placeholder="Phone"
+                                    placeholder="Teléfono de contacto"
                                 />
                             </div>
                             <div className="col-lg-6">
                                 <select
                                     name="subject"
-                                    className="className-select"
+                                    className="className-select form-select mb-3"
                                     onChange={(e) => setSubject(e.target.value)}
                                 >
                                     <option value="">Elige un asunto</option>
@@ -101,8 +104,9 @@ export default function Contactform() {
                             </div>
                             <div className="col-lg-12 text-center">
                                 <textarea
+                                    className="form-control"
                                     name="message"
-                                    placeholder="Message"
+                                    placeholder="Mensaje"
                                     onChange={(e) => setMessage(e.target.value)}
                                     required></textarea>
                                 <button type="submit">Enviar</button>
