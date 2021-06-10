@@ -7,42 +7,44 @@ import './edit.css'
 
 export default function Edit(props) {
 
-    const [name, setNombre] = useState('')
-    const [surname, setApellidos] = useState('')
-    const [dni, setNif] = useState('')
-    const [birthdate, setFnacim] = useState('')
+    const [name, setName] = useState('')
+    const [surname, setSurname] = useState('')
+    const [dni, setDni] = useState('')
+    const [birthdate, setBirthdate] = useState('')
     const [email, setEmail] = useState('')
-    const [phone, setTelefono] = useState('')
-    const [address, setDireccion] = useState('')
-    const [enrolldate, setFalta] = useState('')
-    const [tactividad, setTactividad] = useState([])
-    const [actividadselect, setActividadSelect] = useState('')
+    const [phone, setPhone] = useState('')
+    const [address, setAddress] = useState('')
+    const [enrolldate, setEnrolldate] = useState('')
+    const [tactivity, setTActivity] = useState([])
+    const [activityselect, setActivitySelect] = useState('')
+
+    const token = sessionStorage.getItem('token')
+    const headers = {
+        headers: { 'x-access-token': token }
+    }
 
     useEffect(() => {
         getStudent()
-        setTactividad(['Aikido', 'Karate', 'Meditación'])
-        setActividadSelect('aikido')
+        setTActivity(['Aikido', 'Karate', 'Meditación'])
+        setActivitySelect('aikido')
     }, [])
 
     const getStudent = async () => {
         const id = props.match.params.id // recoge el id que se pasa en la ruta por parámetro
-        const token = sessionStorage.getItem('token')
-        const headers = {
-            headers: { 'x-access-token': token }
-        }
+
         await axios.get('/api/students/' + id, headers)
             .then((response) => {
                 console.log(response.data);
                 // guarda los datos recibidos en el estado
-                setNombre(response.data.name);
-                setApellidos(response.data.surname);
-                setNif(response.data.dni);
-                setFnacim(response.data.birthdate);
-                setTelefono(response.data.phone);
-                setDireccion(response.data.address);
+                setName(response.data.name);
+                setSurname(response.data.surname);
+                setDni(response.data.dni);
+                setBirthdate(response.data.birthdate);
+                setPhone(response.data.phone);
+                setAddress(response.data.address);
                 setEmail(response.data.email);
-                setFalta(response.data.enrolldate);
-                setActividadSelect(response.data.activity.name);
+                setEnrolldate(response.data.enrolldate);
+                setActivitySelect(response.data.activity.name);
             })
             .catch((error) => {
                 if (error.response) {
@@ -62,14 +64,11 @@ export default function Edit(props) {
             })
     }
 
-    const actualizar = async (e) => {
+    const updateStudent = async (e) => {
         e.preventDefault()
         const id = props.match.params.id // recoge el id pasado por parámetro en la dirección
-        const token = sessionStorage.getItem('token')
-        const headers = {
-            headers: { 'x-access-token': token }
-        }
-        const alumno = {
+
+        const student = {
             name,
             surname,
             dni,
@@ -78,10 +77,10 @@ export default function Edit(props) {
             phone,
             address,
             enrolldate,
-            tactividad: actividadselect
+            tactivity: activityselect
         }
 
-        await axios.put('/api/students/' + id, alumno, headers)
+        await axios.put('/api/students/' + id, student, headers)
             .then((response) => {
                 console.log(response.data);
                 const message = response.data.message
@@ -122,10 +121,10 @@ export default function Edit(props) {
                     <h5 className="card-title">Editar Alumno: {`${name} ${surname}`}</h5>
                 </div>
                 <div className="card-body m-3">
-                    <form onSubmit={actualizar} >
+                    <form onSubmit={updateStudent} >
                         {/* nombre */}
                         <div className="form-group mb-3">
-                            <label htmlFor="nombre" className="form-label">Nombre</label>
+                            <label htmlFor="name" className="form-label">Nombre</label>
                             <input
                                 type="text"
                                 name="name"
@@ -133,43 +132,43 @@ export default function Edit(props) {
                                 className="form-control"
                                 placeholder={name}
                                 onChange={
-                                    (e) => setNombre(e.target.value)}
+                                    (e) => setName(e.target.value)}
                             />
                         </div>
                         {/* apellidos */}
                         <div className="form-group mb-3">
-                            <label htmlFor="apellidos" className="form-label">Apellidos</label>
+                            <label htmlFor="surname" className="form-label">Apellidos</label>
                             <input
                                 type="text"
                                 name="surname"
                                 className="form-control"
                                 placeholder={surname}
                                 onChange={
-                                    (e) => setApellidos(e.target.value)}
+                                    (e) => setSurname(e.target.value)}
                             />
                         </div>
-                        {/* nif */}
+                        {/* dni */}
                         <div className="form-group mb-3">
-                            <label htmlFor="nif" className="form-label">NIF</label>
+                            <label htmlFor="dni" className="form-label">DNI</label>
                             <input
                                 type="text"
                                 name="dni"
                                 className="form-control"
                                 placeholder={dni}
                                 onChange={
-                                    (e) => setNif(e.target.value)}
+                                    (e) => setDni(e.target.value)}
                             />
                         </div>
                         {/* fecha nacim */}
                         <div className="form-group mb-3">
-                            <label htmlFor="fnacim" className="form-label">Fecha Nacimiento</label>
+                            <label htmlFor="birthdate" className="form-label">Fecha Nacimiento</label>
                             <input
                                 type="date"
                                 name="birthdate"
                                 className="form-control"
                                 placeholder={birthdate}
                                 onChange={
-                                    (e) => setFnacim(e.target.value)}
+                                    (e) => setBirthdate(e.target.value)}
                             />
                         </div>
                         {/* telefono */}
@@ -181,19 +180,19 @@ export default function Edit(props) {
                                 className="form-control"
                                 placeholder={phone}
                                 onChange={
-                                    (e) => setTelefono(e.target.value)}
+                                    (e) => setPhone(e.target.value)}
                             />
                         </div>
                         {/* direccion */}
                         <div className="form-group mb-3">
-                            <label htmlFor="direccion" className="form-label">Dirección</label>
+                            <label htmlFor="address" className="form-label">Dirección</label>
                             <input
                                 type="text"
                                 name="address"
                                 className="form-control"
                                 placeholder={address}
                                 onChange={
-                                    (e) => setDireccion(e.target.value)}
+                                    (e) => setAddress(e.target.value)}
                             />
                         </div>
                         {/* email */}
@@ -205,7 +204,7 @@ export default function Edit(props) {
                                 className="form-control"
                                 placeholder={email}
                                 onChange={
-                                    (e) => setDireccion(e.target.value)}
+                                    (e) => setEmail(e.target.value)}
                             />
                         </div>
                         {/* fecha alta */}
@@ -217,19 +216,19 @@ export default function Edit(props) {
                                 className="form-control"
                                 placeholder={enrolldate}
                                 onChange={
-                                    (e) => setFalta(e.target.value)}
+                                    (e) => setEnrolldate(e.target.value)}
                             />
                         </div>
                         {/* actividad */}
                         <div className="form-group mb-3">
-                            <label htmlFor="actividad" className="form-label">Actividad</label>
-                            <select name="actividad" className="form-select" onChange={(e) => {
-                                setActividadSelect(e.target.value)
+                            <label htmlFor="activity" className="form-label">Actividad</label>
+                            <select name="activity" className="form-select" onChange={(e) => {
+                                setActivitySelect(e.target.value)
                             }}>
                                 {
-                                    tactividad.map(actividad => (
-                                        <option key={actividad}>
-                                            {actividad}
+                                    tactivity.map(activity => (
+                                        <option key={activity}>
+                                            {activity}
                                         </option>
                                     ))
                                 }

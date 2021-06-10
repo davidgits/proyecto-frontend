@@ -164,7 +164,6 @@ export default function Dashboard() {
         }
         const buscar = e.target.value
         const response = await axios.get('/api/students/find/' + buscar, headers)
-        console.log(response.data);
         setStudents(response.data) // agregamos al estado
     }
 
