@@ -1,0 +1,23 @@
+.dash {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.dash__header {
+    background-color: var(--sakura-1);
+}
+
+.dash__header h1 {
+    color: var(--sakura-5);
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.btn.btn-danger {
+    color: #fff !important;
+    background-color: #dc3545  !important;
+}

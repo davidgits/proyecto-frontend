@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Signup from './components/Signup'
 import Login from './components/Login'
 import Dashboard from "./components/Dashboard";
+import Update from './components/Update'
 import Index from "./components/Index";
 import About from './components/About'
 import Contact from './components/Contact'
@@ -40,6 +41,7 @@ function App() {
                 <Route path="/about" component={About}/>
                 <Route path="/contact" component={Contact} />
                 <MyRoute path="/dashboard" component={Dashboard} />
+                <MyRoute path="/edit/:id" component={Update} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/login" component={Login} />
                 <Footer/>
