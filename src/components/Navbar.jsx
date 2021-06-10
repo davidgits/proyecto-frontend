@@ -36,10 +36,10 @@ export default function Navbar() {
             <nav className="navbar navbar-expand-lg navbar-light bg-light navtop p-0">
                 <ul className="navbar-nav ms-auto me-4 ">
                     <li className="nav-item me-3 my-auto">
-                        TEL: (+34) 654 789 321
+                        TEL: (01) 436 8888
                     </li>
                     <li className="nav-item me-5 my-auto mailto">
-                        <FaEnvelope /><a href="mailto:zenshindojosevilla@gmail.com?subject=Mail from our Website"> zenshindojosevilla@gmail.com</a>
+                        <FaEnvelope /><a href="mailto:zenshindojo@gmail.com?subject=Mail from our Website"> zenshindojos@gmail.com</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="https://www.facebook.com/zenshindojosevilla" target="true">
@@ -89,22 +89,22 @@ export default function Navbar() {
                                     Actividades
                                 </Link>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><Link className="dropdown-item" to="/">Aikido</Link></li>
-                                    <li><Link className="dropdown-item" to="/">Karate-do</Link></li>
-                                    <li><Link className="dropdown-item" to="/">Meditación Zen</Link></li>
-                                    <li><Link className="dropdown-item" to="/">Yoga</Link></li>
-                                    <li><Link className="dropdown-item" to="/">Tai-Chi</Link></li>
-                                    <li><Link className="dropdown-item" to="/">Idioma Japonés</Link></li>
+                                    <li><Link className="dropdown-item" to="/do/aiki">Aikido</Link></li>
+                                    <li><Link className="dropdown-item" to="/do/karate">Karate-do</Link></li>
+                                    <li><Link className="dropdown-item" to="/do/zen">Meditación Zen</Link></li>
+                                    <li><Link className="dropdown-item" to="/do/yoga">Yoga</Link></li>
+                                    <li><Link className="dropdown-item" to="/do/taichi">Tai-Chi</Link></li>
+                                    <li><Link className="dropdown-item" to="/go/nihon">Idioma Japonés</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item mx-2">
-                                <Link className="nav-link" to="/">Horarios</Link>
+                                <Link className="nav-link" to="/timetables">Horarios</Link>
                             </li>
                             <li className="nav-item mx-2">
-                                <Link className="nav-link" to="/">Cursos</Link>
+                                <Link className="nav-link" to="/courses">Cursos</Link>
                             </li>
                             <li className="nav-item mx-2">
-                                <Link className="nav-link" to="/">Galería</Link>
+                                <Link className="nav-link" to="/gallery">Galería</Link>
                             </li>
                             <li className="nav-item mx-2">
                                 <NavLink className="nav-link" activeClassName="active" to="/contact">Contacto</NavLink>

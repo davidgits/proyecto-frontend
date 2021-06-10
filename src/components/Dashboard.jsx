@@ -14,37 +14,39 @@ import "./dashboard.css"
 export default function Dashboard() {
 
     // arreglo vacío porque va a tener varios datos
-    const [alumnos, setAlumnos] = useState([])
+    const [students, setStudents] = useState([])
 
-    const [nombre, setNombre] = useState('')
-    const [apellidos, setApellidos] = useState('')
-    const [nif, setNif] = useState('')
-    const [fecha_nacim, setFnacim] = useState('')
-    const [telefono, setTelefono] = useState('')
-    const [direccion, setDireccion] = useState('')
-    const [fecha_alta, setFalta] = useState('')
-    const [tactividad, setTactividad] = useState([])
-    const [actividadselect, setActividadSelect] = useState('')
+    const [name, setName] = useState('')
+    const [surname, setSurname] = useState('')
+    const [dni, setDni] = useState('')
+    const [birthdate, setBirthdate] = useState('')
+    const [phone, setPhone] = useState('')
+    const [email, setEmail] = useState('')
+    const [address, setAddress] = useState('')
+    const [enrolldate, setEnrolldate] = useState('')
+    const [tactivity, setTactivity] = useState([])
+    const [activityselect, setActivitySelect] = useState('')
+
+    // token-header
+    const token = sessionStorage.getItem('token')
+    const headers = {
+        headers: { 'x-access-token': token }
+    }
 
     // hook que carga el componente
     useEffect(() => {
-        getAlumnos()
-        // setTactividad(['Aikido', 'Karate', 'Meditación']) // se recorre para mostrar al cliente
-        // setActividadSelect('aikido') // valor por defecto
+        getStudents()
+        setTactivity(['Aikido', 'Karate', 'Meditación']) // se recorre para mostrar al cliente
+        setActivitySelect('aikido') // valor por defecto
     }, [])
 
-    // listar alumnos
-    const getAlumnos = async () => {
-        // const id = sessionStorage.getItem('userId')
-        const token = sessionStorage.getItem('token')
-        const headers = {
-            headers: { 'x-access-token': token }
-        }
+    // LISTAR ALUMNOS
+    const getStudents = async () => {
 
         await axios.get('/api/students', headers)
             .then((response) => {
-                console.log(response.data);
-                setAlumnos(response.data); // guarda en el estado
+                // console.log(response.data);
+                setStudents(response.data); // guarda en el estado
             })
             .catch((error) => {
                 if (error.response) {
@@ -60,79 +62,110 @@ export default function Dashboard() {
                     sessionStorage.clear(); // borramos datos de la sesión
                     alert("Sesión expirada."); // alertamos de la sesión caducada
                     window.location.href = '/login'; // redireccionamos a pantalla logueo
+                } else {
+                    console.log(error);
                 }
             })
-
     }
 
-    // eliminar alumnos
-    const eliminar = async (id) => {
-        const token = sessionStorage.getItem('token')
-        const response = await axios.delete('/api/students' + id,
-            {
-                headers: { 'token': token },
+    // ELIMINAR ALUMNOS
+    const deleteStudent = async (id) => {
+
+        await axios.delete('/api/students/' + id, headers)
+            .then((response) => {
+                console.log(response.data);
+                const message = response.data.message
+                Swal.fire({
+                    icon: 'success',
+                    title: message,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
             })
-        const message = response.data.message
-        Swal.fire({
-            icon: 'success',
-            title: message,
-            showConfirmButton: false,
-            timer: 1500
-        })
-        getAlumnos()
+            .catch((error) => {
+                if (error.response) {
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log('Error', error.message);
+                }
+                // si el token expiró
+                if (error.response.status === 401) {
+                    sessionStorage.clear(); // borramos datos de la sesión
+                    alert("Sesión expirada."); // alertamos de la sesión caducada
+                    window.location.href = '/login'; // redireccionamos a pantalla logueo
+                }
+            })
+        getStudents()
     }
 
-    // guardar alumno
-    const guardar = async (e) => {
+    // NUEVO ALUMNO
+    const newStudent = async (e) => {
+
         e.preventDefault();
-        const alumno = {
-            nombre,
-            apellidos,
-            nif,
-            fecha_nacim,
-            telefono,
-            direccion,
-            fecha_alta,
-            tactividad: actividadselect
+        const student = {
+            name,
+            surname,
+            dni,
+            birthdate,
+            phone,
+            email,
+            address,
+            enrolldate,
+            tactivity: activityselect
         }
-        const token = sessionStorage.getItem('token')
-        const response = await axios.post('/api/students', alumno, {
-            headers: { 'token': token }
-        })
-        const status = response.data.status
-        const message = response.data.message
-        if (status !== 406) {
-            Swal.fire({
-                icon: 'success',
-                title: message,
-                showConfirmButton: false,
-                timer: 1500
+
+        await axios.post('/api/students', student, headers)
+
+            .then((response) => {
+                // const status = response.data.status
+                const message = response.data.message
+                Swal.fire({
+                    icon: 'success',
+                    title: message,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                setTimeout(() => {
+                    window.location.href = '/dashboard'
+                }, 1500)
             })
-            setTimeout(() => {
-                window.location.href = '/dashboard'
-            }, 1500)
-        } else {
-            Swal.fire({
-                icon: 'error',
-                title: message,
-                showConfirmButton: false,
-                timer: 1500
+            .catch((error) => {
+
+                if (error.response) {
+                    const message = error.response.data.message
+                    Swal.fire({
+                        icon: 'error',
+                        title: message,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log('Error', error.message);
+                }
+                console.log(error.config);
             })
-        }
     }
 
     // barra de búsqueda por nombre
-    const buscar = async (e) => {
+    const findStudentByName = async (e) => {
         // si el cuadro de búsqueda está vacío, carga todos los alumnos
         if (e.target.value === '') {
-            return getAlumnos()
+            return getStudents()
         }
         const buscar = e.target.value
-        const token = sessionStorage.getItem('token')
-        const response = await axios.get('/api/students/find/' + buscar, {
-            headers: { 'token': token }
-        })
-        setAlumnos(response.data) // agregamos al estado
+        const response = await axios.get('/api/students/find/' + buscar, headers)
+        console.log(response.data);
+        setStudents(response.data) // agregamos al estado
     }
 
     return (
@@ -158,7 +191,7 @@ export default function Dashboard() {
                             ><GoPlus /> Add Alumno</Link>
                         </div>
                     </div>
-                    {/* barra de búsqueda */}
+                    {/* BARRA DE BÚSQUEDA*/}
                     <div className="col-md-6 ms-auto">
                         <input
                             type="search"
@@ -166,12 +199,12 @@ export default function Dashboard() {
                             placeholder="Buscar..."
                             name="name"
                             aria-label='Search'
-                            onChange={(e) => buscar(e)}
+                            onChange={(e) => findStudentByName(e)}
                         />
                     </div>
                 </div>
             </nav>
-            {/* mostrar alumnos */}
+            {/* TABLA ALUMNOS */}
             <div className="row">
                 <div className="col-md-10 mx-auto">
                     <div className="card">
@@ -188,6 +221,7 @@ export default function Dashboard() {
                                         <th>NIF</th>
                                         <th>Fecha Nacimiento</th>
                                         <th>Teléfono</th>
+                                        <th>Email</th>
                                         <th>Dirección</th>
                                         <th>Fecha Alta</th>
                                         <th className="text-center" colSpan="2">Acciones</th>
@@ -195,21 +229,22 @@ export default function Dashboard() {
                                 </thead>
                                 <tbody>
                                     {
-                                        alumnos.map((alumno, i) => (
-                                            <tr key={alumno._id}>
+                                        students.map((student, i) => (
+                                            <tr key={student._id}>
                                                 <td>{(i + 1)}</td>
-                                                <td>{alumno.name}</td>
-                                                <td>{alumno.surname}</td>
-                                                <td>{alumno.dni}</td>
-                                                <td>{moment(alumno.birthdate).format("DD/MM/YYYY")}</td>
-                                                <td>{alumno.phone}</td>
-                                                <td>{alumno.address}</td>
-                                                <td>{moment(alumno.enrolldate).format("DD/MM/YYYY")}</td>
+                                                <td>{student.name}</td>
+                                                <td>{student.surname}</td>
+                                                <td>{student.dni}</td>
+                                                <td>{moment(student.birthdate).format("DD/MM/YYYY")}</td>
+                                                <td>{student.phone}</td>
+                                                <td>{student.email}</td>
+                                                <td>{student.address}</td>
+                                                <td>{moment(student.enrolldate).format("DD/MM/YYYY")}</td>
                                                 <td>
-                                                    <button className="btn btn-danger" onClick={() => eliminar(alumno._id)}>Eliminar</button>
+                                                    <button className="btn btn-danger" onClick={() => deleteStudent(student._id)}>Eliminar</button>
                                                 </td>
                                                 <td>
-                                                    <Link to={'/edit/' + alumno._id} className="btn btn-warning">Editar</Link>
+                                                    <Link to={'/edit/' + student._id} className="btn btn-warning">Editar</Link>
                                                 </td>
                                             </tr>
                                         ))
@@ -220,18 +255,20 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
-            {/* MODAL */}
+            {/* MODAL AÑADIR ALUMNO (CREATE) */}
             <div className="modal fade" id="addAlumno">
                 <div className="modal-dialog">
                     <div className="modal-content">
-                        <div className="modal-header bg-primary text-white">
+                        <div className="modal-header text-white">
                             <h5 className="modal-title">Añadir Alumno</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <form onSubmit={guardar}>
+                            {/* Formulario */}
+                            <form onSubmit={newStudent}>
+                                {/* nombre */}
                                 <div className="mb-3">
-                                    <label htmlFor="nombre" className="col-form-label">Nombre</label>
+                                    <label htmlFor="name" className="col-form-label">Nombre</label>
                                     <input
                                         type="text"
                                         name="name"
@@ -239,42 +276,46 @@ export default function Dashboard() {
                                         className="form-control"
                                         required
                                         onChange={
-                                            (e) => setNombre(e.target.value)}
+                                            (e) => setName(e.target.value)}
                                     />
                                 </div>
+                                {/* apellidos */}
                                 <div className="mb-3">
-                                    <label htmlFor="apellidos" className="col-form-label">Apellidos</label>
+                                    <label htmlFor="surname" className="col-form-label">Apellidos</label>
                                     <input
                                         type="text"
                                         name="surname"
                                         className="form-control"
                                         required
                                         onChange={
-                                            (e) => setApellidos(e.target.value)}
+                                            (e) => setSurname(e.target.value)}
                                     />
                                 </div>
+                                {/* dni */}
                                 <div className="mb-3">
-                                    <label htmlFor="nif" className="col-form-label">NIF</label>
+                                    <label htmlFor="dni" className="col-form-label">DNI</label>
                                     <input
                                         type="text"
                                         name="dni"
                                         className="form-control"
                                         required
                                         onChange={
-                                            (e) => setNif(e.target.value)}
+                                            (e) => setDni(e.target.value)}
                                     />
                                 </div>
+                                {/* fecha nacimiento */}
                                 <div className="mb-3">
-                                    <label htmlFor="fnacim" className="col-form-label">Fecha Nacimiento</label>
+                                    <label htmlFor="birthdate" className="col-form-label">Fecha Nacimiento</label>
                                     <input
                                         type="date"
                                         name="birthdate"
                                         className="form-control"
                                         required
                                         onChange={
-                                            (e) => setFnacim(e.target.value)}
+                                            (e) => setBirthdate(e.target.value)}
                                     />
                                 </div>
+                                {/* teléfono */}
                                 <div className="mb-3">
                                     <label htmlFor="phone" className="col-form-label">Teléfono</label>
                                     <input
@@ -283,40 +324,54 @@ export default function Dashboard() {
                                         className="form-control"
                                         required
                                         onChange={
-                                            (e) => setTelefono(e.target.value)}
+                                            (e) => setPhone(e.target.value)}
                                     />
                                 </div>
+                                {/* email */}
                                 <div className="mb-3">
-                                    <label htmlFor="direccion" className="col-form-label">Dirección</label>
+                                    <label htmlFor="email" className="col-form-label">Email</label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        className="form-control"
+                                        required
+                                        onChange={
+                                            (e) => setEmail(e.target.value)}
+                                    />
+                                </div>
+                                {/* dirección */}
+                                <div className="mb-3">
+                                    <label htmlFor="address" className="col-form-label">Dirección</label>
                                     <input
                                         type="text"
                                         name="address"
                                         className="form-control"
                                         required
                                         onChange={
-                                            (e) => setDireccion(e.target.value)}
+                                            (e) => setAddress(e.target.value)}
                                     />
                                 </div>
+                                {/* fecha alta */}
                                 <div className="mb-3">
-                                    <label htmlFor="falta" className="col-form-label">Fecha Alta</label>
+                                    <label htmlFor="enrolldate" className="col-form-label">Fecha Alta</label>
                                     <input
                                         type="date"
                                         name="enrolldate"
                                         className="form-control"
                                         required
                                         onChange={
-                                            (e) => setFalta(e.target.value)}
+                                            (e) => setEnrolldate(e.target.value)}
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="actividad" className="col-form-label">Actividad</label>
-                                    <select name="actividad" className="form-select" onChange={(e) => {
-                                        setActividadSelect(e.target.value)
+                                    <label htmlFor="activity" className="col-form-label">Actividad</label>
+                                    <select name="activity" className="form-select" onChange={(e) => {
+                                        setActivitySelect(e.target.value)
                                     }}>
                                         {
-                                            tactividad.map(actividad => (
-                                                <option key={actividad}>
-                                                    {actividad}
+                                            tactivity.map(activity => (
+                                                <option key={activity}>
+                                                    {activity}
                                                 </option>
                                             ))
                                         }

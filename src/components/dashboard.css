@@ -21,3 +21,8 @@ code {
     color: #fff !important;
     background-color: #dc3545  !important;
 }
+
+/* modal */
+.modal-header {
+    background-color: var(--sakura-3);
+}

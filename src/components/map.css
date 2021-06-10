@@ -10,28 +10,17 @@
 .map .map-inside {
 	position: absolute;
 	left: 50%;
-	top: 160px;
+	top: 50px;
 	-webkit-transform: translateX(-175px);
 	-ms-transform: translateX(-175px);
 	transform: translateX(-175px);
-}
-
-.map .map-inside i {
-	font-size: 48px;
-	color: #5768AD;
-	position: absolute;
-	bottom: -75px;
-	left: 50%;
-	-webkit-transform: translateX(-18px);
-	-ms-transform: translateX(-18px);
-	transform: translateX(-18px);
 }
 
 .map .map-inside .inside-widget {
 	width: 350px;
 	background: #ffffff;
 	text-align: center;
-	padding: 23px 0;
+	padding: 10px 0;
 	position: relative;
 	z-index: 1;
 	-webkit-box-shadow: 0 0 20px 5px rgba(12, 7, 26, 0.15);

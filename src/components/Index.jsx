@@ -24,14 +24,14 @@ export default function Index() {
                     <div className="carousel-caption">
                         <h2 className="carousel-caption-title">Centro cultural japonés</h2>
                         <p>Some representative placeholder content for the second slide of the carousel.</p>
-                        <p><a className="btn btn-lg btn-primary" href="/">Learn more</a></p>
+                        <p><a className="btn btn-lg btn-primary" href="/about">Saber más</a></p>
                     </div>
                 </div>
                 <div className="container">
                     <div className="carousel-caption-off">
                         <h2 className="section-title">Centro cultural japonés</h2>
                         <p>Some representative placeholder content for the second slide of the carousel.</p>
-                        <p><a className="btn btn-md btn-primary" href="/">Learn more</a></p>
+                        <p><a className="btn btn-md btn-primary" href="/">Saber más</a></p>
                         <hr />
                     </div>
                 </div>

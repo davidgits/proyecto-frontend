@@ -1,17 +1,17 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 // estilos
 import "./App.css";
 // componentes
 import Navbar from "./components/Navbar";
-import Signup from './components/Signup'
-import Login from './components/Login'
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
-import Update from './components/Update'
+import Edit from "./components/Edit";
 import Index from "./components/Index";
-import About from './components/About'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 // PROTEGEMOS LAS RUTAS:
 const isAuthenticated = () => {
@@ -35,17 +35,19 @@ const PublicRoute = (props) => {
 
 function App() {
     return (
-            <Router>
-                <Navbar />
-                <PublicRoute path="/" exact component={Index}/>
-                <Route path="/about" component={About}/>
-                <Route path="/contact" component={Contact} />
+        <Router>
+            <Navbar />
+            <Switch>
+                <PublicRoute path="/" exact component={Index} />
+                <PublicRoute path="/about" component={About} />
+                <PublicRoute path="/contact" component={Contact} />
                 <MyRoute path="/dashboard" component={Dashboard} />
-                <MyRoute path="/edit/:id" component={Update} />
+                <MyRoute path="/edit/:id" component={Edit} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/login" component={Login} />
-                <Footer/>
-            </Router>
+            </Switch>
+            <Footer />
+        </Router>
     );
 }
 

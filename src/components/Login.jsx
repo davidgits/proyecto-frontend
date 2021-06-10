@@ -112,7 +112,7 @@ export default function Login() {
                                 </div>
                             </form>
                             <div className="form-text p-3">
-                                Si no tiene las credenciales de acceso, contacte con nosotros a través del correo <a href="mailto:zenshindojosevilla@gmail.com">zenshindojosevilla@gmail.com</a>
+                                Si no tiene las credenciales de acceso, contacte con nosotros a través del correo <a href="mailto:zenshindojo@gmail.com">zenshindojo@gmail.com</a>
                             </div>
                         </div>
                     </div>
