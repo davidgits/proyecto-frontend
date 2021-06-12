@@ -28,7 +28,7 @@ export default function Navbar() {
 
     // cierra automáticamente el menú desplegable en pantallas pequeñas al hacer click en enlace
     // TODO revisar código de cambio de estado
-    const [isCollapsed, setCollapsed] = useState(true)
+    // const [isCollapsed, setCollapsed] = useState(true)
 
     return (
         <>
@@ -39,7 +39,7 @@ export default function Navbar() {
                         TEL: (01) 436 8888
                     </li>
                     <li className="nav-item me-5 my-auto mailto">
-                        <FaEnvelope /><a href="mailto:zenshindojo@gmail.com?subject=Mail from our Website"> zenshindojos@gmail.com</a>
+                        <FaEnvelope /><a href="mailto:zenshindojo@gmail.com?subject=Mail from our Website"> zenshindojo@gmail.com</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="https://www.facebook.com/zenshindojosevilla" target="true">
@@ -70,19 +70,20 @@ export default function Navbar() {
                         <span className="fw-bold">&nbsp; zenshin</span>dojo
                     </Link>
                     {/* LOGO END */}
-                    {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> */}
-                    <button className={`navbar-toggler ${isCollapsed ? "collapsed" : ""}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded={isCollapsed ? "false" : "true"} aria-label="Toggle navigation">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    {/* <button className={`navbar-toggler ${isCollapsed ? "collapsed" : ""}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded={isCollapsed ? "false" : "true"} aria-label="Toggle navigation"> */}
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     {/* {isCollapsed?collapse navbar-collapse show : collapse navbar-collapse} */}
-                    {/* <div className="collapse navbar-collapse" id="navbarNavDropdown"> */}
-                    <div className={`collapse navbar-collapse ${isCollapsed ? "" : "show"}`} id="navbarNavDropdown">
+                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                    {/* <div className={`collapse navbar-collapse ${isCollapsed ? "" : "show"}`} id="navbarNavDropdown"> */}
                         <ul className="navbar-nav mx-auto">
                             <li className="nav-item mx-2">
                                 <NavLink className="nav-link" exact activeClassName="active" aria-current="page" to="/">Inicio</NavLink>
                             </li>
                             <li className="nav-item mx-2">
-                                <NavLink className="nav-link" activeClassName="active" to="/about" onClick={() => setCollapsed(!isCollapsed)}>El Dojo</NavLink>
+                                {/* <NavLink className="nav-link" activeClassName="active" to="/about" onClick={() => setCollapsed(!isCollapsed)}>El Dojo</NavLink> */}
+                                <NavLink className="nav-link" activeClassName="active" to="/about">El Dojo</NavLink>
                             </li>
                             <li className="nav-item dropdown mx-2">
                                 <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">

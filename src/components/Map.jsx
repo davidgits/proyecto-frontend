@@ -9,8 +9,9 @@ export default function Map() {
     return (
         <div className="map">
             <iframe
-                src="https://www.google.com/maps/embed/v1/search?q=zenshin%20dojo%20sevilla&key=AIzaSyD4F-sk35nMCvSV7fuYaYOiwOzJ3_zlGxU"
-                height="500" style={{ border: 0 }} allowfullscreen="" aria-hidden="false" tabindex="0" title="location-map"></iframe>
+                // src="https://www.google.com/maps/embed/v1/search?q=zenshin%20dojo%20sevilla&key=AIzaSyD4F-sk35nMCvSV7fuYaYOiwOzJ3_zlGxU"
+                src={process.env.REACT_APP_GOOGLE_API_KEY}
+                height="500" style={{ border: 0 }} allowFullScreen="" aria-hidden="false" tabIndex="0" title="location-map"></iframe>
             <div className="map-inside">
                 <div className="inside-widget">
                     <IconContext.Provider value={{ style: { fontSize: '2em', color: '#e9b1cd', marginBottom: '5px' } }}>

@@ -10,11 +10,17 @@ import moment from 'moment'
 import Swal from 'sweetalert2'
 // estilos
 import "./dashboard.css"
+// paginación
+import Pagination from './Pagination'
 
 export default function Dashboard() {
 
     // arreglo vacío porque va a tener varios datos
     const [students, setStudents] = useState([])
+    const [loading, setLoading] = useState(false);
+    // paginación
+    const [currentPage, setCurrentPage] = useState(1);
+    const [studsPerPage] = useState(5);
 
     const [name, setName] = useState('')
     const [surname, setSurname] = useState('')
@@ -39,6 +45,15 @@ export default function Dashboard() {
         setTactivity(['Aikido', 'Karate', 'Meditación']) // se recorre para mostrar al cliente
         setActivitySelect('aikido') // valor por defecto
     }, [])
+
+    // PAGINACIÓN
+    const indexOfLastStud = currentPage * studsPerPage
+    const indexOfFirstStud = indexOfLastStud - studsPerPage
+    const currentStuds = students.slice(indexOfFirstStud, indexOfLastStud)
+
+    // CAMBIAR DE PÁGINA
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
 
     // LISTAR ALUMNOS
     const getStudents = async () => {
@@ -73,7 +88,7 @@ export default function Dashboard() {
 
         await axios.delete('/api/students/' + id, headers)
             .then((response) => {
-                console.log(response.data);
+                console.log(response);
                 const message = response.data.message
                 Swal.fire({
                     icon: 'success',
@@ -178,6 +193,7 @@ export default function Dashboard() {
                     </div>
                 </div>
             </header>
+            {/* añadir y buscar */}
             <nav className="navbar py-4">
                 <div className="container">
                     <div className="col-md-3">
@@ -206,6 +222,8 @@ export default function Dashboard() {
             {/* TABLA ALUMNOS */}
             <div className="row">
                 <div className="col-md-10 mx-auto">
+
+
                     <div className="card">
                         <div className="card-header">
                             <h4>Alumnos de {sessionStorage.getItem('name')}</h4>
@@ -228,30 +246,36 @@ export default function Dashboard() {
                                 </thead>
                                 <tbody>
                                     {
-                                        students.map((student, i) => (
-                                            <tr key={student._id}>
-                                                <td>{(i + 1)}</td>
-                                                <td>{student.name}</td>
-                                                <td>{student.surname}</td>
-                                                <td>{student.dni}</td>
-                                                <td>{moment(student.birthdate).format("DD/MM/YYYY")}</td>
-                                                <td>{student.phone}</td>
-                                                <td>{student.email}</td>
-                                                <td>{student.address}</td>
-                                                <td>{moment(student.enrolldate).format("DD/MM/YYYY")}</td>
-                                                <td>
-                                                    <button className="btn btn-danger" onClick={() => deleteStudent(student._id)}>Eliminar</button>
-                                                </td>
-                                                <td>
-                                                    <Link to={'/edit/' + student._id} className="btn btn-warning">Editar</Link>
-                                                </td>
-                                            </tr>
-                                        ))
+                                        (loading)
+                                            ?
+                                            <tr><td colSpan="10">Loading...</td></tr>
+                                            :
+                                            currentStuds.map((student, i) => (
+                                                <tr key={student._id}>
+                                                    <td>{(i + 1)}</td>
+                                                    <td>{student.name}</td>
+                                                    <td>{student.surname}</td>
+                                                    <td>{student.dni}</td>
+                                                    <td>{moment(student.birthdate).format("DD/MM/YYYY")}</td>
+                                                    <td>{student.phone}</td>
+                                                    <td>{student.email}</td>
+                                                    <td>{student.address}</td>
+                                                    <td>{moment(student.enrolldate).format("DD/MM/YYYY")}</td>
+                                                    <td>
+                                                        <button className="btn btn-danger" onClick={() => deleteStudent(student._id)}>Eliminar</button>
+                                                    </td>
+                                                    <td>
+                                                        <Link to={'/edit/' + student._id} className="btn btn-warning">Editar</Link>
+                                                    </td>
+                                                </tr>
+                                            ))
                                     }
                                 </tbody>
                             </table>
                         </div>
                     </div>
+                    {/* PAGINACIÓN */}
+                    <Pagination studsPerPage={studsPerPage} totalStuds={students.length} paginate={paginate} />
                 </div>
             </div>
             {/* MODAL AÑADIR ALUMNO (CREATE) */}

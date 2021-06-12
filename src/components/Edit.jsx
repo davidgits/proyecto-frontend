@@ -30,7 +30,7 @@ export default function Edit(props) {
     }, [])
 
     const getStudent = async () => {
-        const id = props.match.params.id // recoge el id que se pasa en la ruta por parámetro
+        const id = props.match.params.id // recoge el id del alumno que se pasa en la ruta por parámetro
 
         await axios.get('/api/students/' + id, headers)
             .then((response) => {

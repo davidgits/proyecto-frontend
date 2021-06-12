@@ -12,6 +12,7 @@ import Index from "./components/Index";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Gallery from "./components/Gallery";
 
 // PROTEGEMOS LAS RUTAS:
 const isAuthenticated = () => {
@@ -39,10 +40,11 @@ function App() {
             <Navbar />
             <Switch>
                 <PublicRoute path="/" exact component={Index} />
-                <PublicRoute path="/about" component={About} />
+                <Route path="/about" component={About} />
                 <PublicRoute path="/contact" component={Contact} />
                 <MyRoute path="/dashboard" component={Dashboard} />
                 <MyRoute path="/edit/:id" component={Edit} />
+                <Route path="/gallery" component={Gallery} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/login" component={Login} />
             </Switch>
