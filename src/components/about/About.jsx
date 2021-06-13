@@ -1,11 +1,10 @@
 import React from 'react'
+import Carousel from './Carousel'
 // estilos
 import './about.css'
 // react-icons
 import { IconContext } from "react-icons"
 import { GiTwirlyFlower } from 'react-icons/gi'
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
-
 
 
 export default function About() {
@@ -105,66 +104,8 @@ export default function About() {
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="team__slider owl-carousel">
-                            <div className="col-lg-6">
-                                <div className="team__item">
-                                    <div className="team__item__pic">
-                                        <img src={`${process.env.PUBLIC_URL}/assets/images/about/team-1.png`} alt="" />
-                                    </div>
-                                    <div className="team__item__text">
-                                        <div className="team__item__title">
-                                            <h4>Christina Lauren</h4>
-                                            <span>Yoga Teacher</span>
-                                        </div>
-                                        <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
-                                        <div className="team__item__social">
-                                            <a href="https://www.facebook.com/zenshindojosevilla"><FaFacebook /></a>
-                                            <a href="https://www.facebook.com/zenshindojosevilla"><FaTwitter /></a>
-                                            <a href="https://www.instagram.com/isshindojo"><FaInstagram /></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-6">
-                                <div className="team__item">
-                                    <div className="team__item__pic">
-                                        <img src={`${process.env.PUBLIC_URL}/assets/images/about/team-2.png`} alt="" />
-                                    </div>
-                                    <div className="team__item__text">
-                                        <div className="team__item__title">
-                                            <h4>Tracy Maclaren</h4>
-                                            <span>Yoga Teacher</span>
-                                        </div>
-                                        <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
-                                        <div className="team__item__social">
-                                            <a href="https://www.facebook.com/zenshindojosevilla"><FaFacebook /></a>
-                                            <a href="https://www.facebook.com/zenshindojosevilla"><FaTwitter /></a>
-                                            <a href="https://www.instagram.com/isshindojo"><FaInstagram /></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-6">
-                                <div className="team__item">
-                                    <div className="team__item__pic">
-                                        <img src={`${process.env.PUBLIC_URL}/assets/images/about/team-1.png`} alt="" />
-                                    </div>
-                                    <div className="team__item__text">
-                                        <div className="team__item__title">
-                                            <h4>Tracy Maclaren</h4>
-                                            <span>Yoga Teacher</span>
-                                        </div>
-                                        <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
-                                        <div className="team__item__social">
-                                            <a href="https://www.facebook.com/zenshindojosevilla"><FaFacebook /></a>
-                                            <a href="https://www.facebook.com/zenshindojosevilla"><FaTwitter /></a>
-                                            <a href="https://www.instagram.com/isshindojo"><FaInstagram /></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="row mt-5 pt-3">
+                      <Carousel/>
                     </div>
                 </div>
             </section>

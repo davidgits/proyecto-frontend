@@ -1,0 +1,231 @@
+.classes__sidebar__item {
+	margin-bottom: 60px;
+}
+
+.classes__sidebar__item.classes__sidebar__item--info h4 {
+	margin-bottom: 30px;
+}
+
+.classes__sidebar__item h4 {
+	color: #263246;
+	margin-bottom: 40px;
+}
+
+.classes__sidebar__item ul.classes__sidebar__item__widget li {
+	display: inline-block;
+	margin-right: 45px;
+}
+
+.classes__sidebar__item ul.classes__sidebar__item__widget li:last-child {
+	margin-right: 0;
+}
+
+.classes__sidebar__item ul.classes__sidebar__item__id {
+	margin-bottom: 30px;
+}
+
+.classes__sidebar__item ul li {
+	list-style: none;
+	font-size: 18px;
+	color: #6E7580;
+	line-height: 36px;
+}
+
+.classes__sidebar__item ul li span {
+	margin-right: 5px;
+	font-size: 18px;
+}
+
+.classes__sidebar__item .sidebar-btn {
+	font-size: 14px;
+	font-weight: 700;
+	color: #5768AD;
+	display: inline-block;
+	border: 1px solid #5768AD;
+	padding: 10px 20px 7px;
+	border-radius: 2px;
+}
+
+.classes__sidebar__instructor__pic {
+	float: left;
+	margin-right: 30px;
+}
+
+.classes__sidebar__instructor__pic img {
+	height: 121px;
+	width: 121px;
+	border-radius: 50%;
+}
+
+.classes__sidebar__instructor__text {
+	overflow: hidden;
+}
+
+.classes__sidebar__instructor__text .classes__sidebar__instructor__title {
+	margin-bottom: 15px;
+}
+
+.classes__sidebar__instructor__text .classes__sidebar__instructor__title h4 {
+	color: #5768AD;
+	margin-bottom: 0;
+}
+
+.classes__sidebar__instructor__text .classes__sidebar__instructor__title span {
+	font-size: 16px;
+	color: #6E7580;
+}
+
+.classes__sidebar__instructor__text p {
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 20px;
+}
+
+.classes__sidebar__instructor__text .classes__sidebar__instructor__social a {
+	font-size: 16px;
+	color: #9B9EA3;
+	display: inline-block;
+	margin-right: 18px;
+	-webkit-transition: all, 0.3s;
+	-moz-transition: all, 0.3s;
+	-ms-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+}
+
+.classes__sidebar__instructor__text .classes__sidebar__instructor__social a:hover {
+	color: #5768AD;
+}
+
+.classes__sidebar__instructor__text .classes__sidebar__instructor__social a:last-child {
+	margin-right: 0;
+}
+
+.classes__sidebar__comment {
+	border-bottom: 1px solid rgba(37, 37, 37, 0.1);
+	padding-bottom: 30px;
+	margin-bottom: 40px;
+	overflow: hidden;
+}
+
+.classes__sidebar__comment:last-child {
+	padding-bottom: 0;
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+.classes__sidebar__comment__pic {
+	text-align: center;
+	float: left;
+	margin-right: 30px;
+}
+
+.classes__sidebar__comment__pic img {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.classes__sidebar__comment__pic .classes__sidebar__comment__rating i {
+	font-size: 12px;
+	color: #F5C136;
+	margin-right: -4px;
+}
+
+.classes__sidebar__comment__text {
+	overflow: hidden;
+}
+
+.classes__sidebar__comment__text span {
+	font-size: 14px;
+	color: #9B9EA3;
+	display: block;
+}
+
+.classes__sidebar__comment__text h6 {
+	color: #5768AD;
+	font-weight: 700;
+	margin-top: 6px;
+	margin-bottom: 5px;
+}
+
+.classes__sidebar__comment__text p {
+	line-height: 28px;
+	margin-bottom: 0;
+}
+
+.classes__details h2 {
+	font-size: 44px;
+	color: #263246;
+	margin-bottom: 16px;
+}
+
+.classes__details p {
+	line-height: 28px;
+	margin-bottom: 40px;
+}
+
+.classes__details .classes__details__widget {
+	margin-bottom: 15px;
+}
+
+.classes__details .classes__details__widget li {
+	list-style: none;
+	font-size: 16px;
+	color: #9B9EA3;
+	display: inline-block;
+	margin-right: 45px;
+}
+
+.classes__details .classes__details__widget li:last-child {
+	margin-right: 0;
+}
+
+.classes__details .classes__details__widget li span {
+	margin-right: 5px;
+}
+
+.classes__details__large {
+	position: relative;
+	margin-bottom: 28px;
+}
+
+.classes__details__large span {
+	font-size: 14px;
+	font-weight: 700;
+	color: #ffffff;
+	display: inline-block;
+	padding: 5px 30px 4px 20px;
+	background: #5768AD;
+	position: absolute;
+	left: 0;
+	top: 10px;
+}
+
+.classes__details__item {
+	margin-bottom: 20px;
+}
+
+.classes__details__item img {
+	min-width: 100%;
+	margin-bottom: 20px;
+}
+
+.classes__details__desc h6 {
+	color: #263246;
+	font-weight: 700;
+	margin-bottom: 12px;
+}
+
+.classes__details__desc ul li {
+	list-style: none;
+	font-size: 16px;
+	line-height: 28px;
+}
+
+.classes__details__desc ul li span {
+	color: #5768AD;
+	margin-right: 10px;
+}

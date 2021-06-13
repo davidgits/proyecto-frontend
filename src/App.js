@@ -13,6 +13,8 @@ import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import Gallery from "./components/gallery/Gallery";
+import Workshop from "./components/workshop/Workshop";
+import Timetables from "./components/timetables/Timetables";
 
 // PROTEGEMOS LAS RUTAS:
 const isAuthenticated = () => {
@@ -44,6 +46,8 @@ function App() {
                 <PublicRoute path="/contact" component={Contact} />
                 <MyRoute path="/dashboard" component={Dashboard} />
                 <MyRoute path="/edit/:id" component={Edit} />
+                <Route path="/timetables" component={Timetables} />
+                <Route path="/workshop" component={Workshop} />
                 <Route path="/gallery" component={Gallery} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/login" component={Login} />

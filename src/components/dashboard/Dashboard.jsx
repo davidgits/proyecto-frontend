@@ -119,10 +119,10 @@ export default function Dashboard() {
     }
 
     return (
-        <section className="row dash mb-5">
+        <section className="row dash">
             {/* ENCABEZADO */}
             <header className="dash__header">
-                <div className="col-md-6 ms-5 py-3">
+                <div className="col-md-6 ms-5 pt-3">
                     <h1><FaPencilAlt /> Alumnos</h1>
                 </div>
             </header>
@@ -149,7 +149,7 @@ export default function Dashboard() {
                 </div>
             </div>
             {/* TABLA ALUMNOS */}
-            <div className="row">
+            <div className="row __table">
                 <div className="col-md-10 mx-auto">
                     <div className="card">
                         <div className="card-header">

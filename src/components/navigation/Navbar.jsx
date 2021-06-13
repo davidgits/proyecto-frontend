@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 // react-icons
 import { IconContext } from "react-icons"
 import { GiTwirlyFlower } from 'react-icons/gi'
-import { FaEnvelope, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { FaEnvelope, FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 
 // css
 import "./navbar.css"
@@ -56,6 +56,11 @@ export default function Navbar() {
                             <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: '1.2em' } }}><FaInstagram /></IconContext.Provider>
                         </a>
                     </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="https://www.instagram.com/isshindojo" target="true">
+                            <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: '1.2em' } }}><FaYoutube/></IconContext.Provider>
+                        </a>
+                    </li>
                 </ul>
                 {/* TOP NAVBAR END */}
             </nav>
@@ -71,68 +76,67 @@ export default function Navbar() {
                     </Link>
                     {/* LOGO END */}
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    {/* <button className={`navbar-toggler ${isCollapsed ? "collapsed" : ""}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded={isCollapsed ? "false" : "true"} aria-label="Toggle navigation"> */}
+                        {/* <button className={`navbar-toggler ${isCollapsed ? "collapsed" : ""}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded={isCollapsed ? "false" : "true"} aria-label="Toggle navigation"> */}
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     {/* {isCollapsed?collapse navbar-collapse show : collapse navbar-collapse} */}
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                    {/* <div className={`collapse navbar-collapse ${isCollapsed ? "" : "show"}`} id="navbarNavDropdown"> */}
-                        <ul className="navbar-nav mx-auto">
-                            <li className="nav-item mx-2">
-                                <NavLink className="nav-link" exact activeClassName="active" aria-current="page" to="/">Inicio</NavLink>
-                            </li>
-                            <li className="nav-item mx-2">
-                                {/* <NavLink className="nav-link" activeClassName="active" to="/about" onClick={() => setCollapsed(!isCollapsed)}>El Dojo</NavLink> */}
-                                <NavLink className="nav-link" activeClassName="active" to="/about">El Dojo</NavLink>
-                            </li>
-                            <li className="nav-item dropdown mx-2">
-                                <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Actividades
-                                </Link>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><Link className="dropdown-item" to="/do/aiki">Aikido</Link></li>
-                                    <li><Link className="dropdown-item" to="/do/karate">Karate-do</Link></li>
-                                    <li><Link className="dropdown-item" to="/do/zen">Meditación Zen</Link></li>
-                                    <li><Link className="dropdown-item" to="/do/yoga">Yoga</Link></li>
-                                    <li><Link className="dropdown-item" to="/do/taichi">Tai-Chi</Link></li>
-                                    <li><Link className="dropdown-item" to="/go/nihon">Idioma Japonés</Link></li>
-                                </ul>
-                            </li>
-                            <li className="nav-item mx-2">
-                                <Link className="nav-link" to="/timetables">Horarios</Link>
-                            </li>
-                            <li className="nav-item mx-2">
-                                <Link className="nav-link" to="/courses">Cursos</Link>
-                            </li>
-                            <li className="nav-item mx-2">
-                                <Link className="nav-link" to="/gallery">Galería</Link>
-                            </li>
-                            <li className="nav-item mx-2">
-                                <NavLink className="nav-link" activeClassName="active" to="/contact">Contacto</NavLink>
-                            </li>
-                        </ul>
-
-                        {/* usuario logueado: si menu es true está logueado y por tanto aparecen salir y bienvenido usuario */}
-                        {
-
-                            menu ?
-                                <ul className="navbar-nav">
-                                    <li className="nav-item mx-2">
-                                        <Link className="nav-link" aria-current="page" to="/dashboard">Bienvenido {sessionStorage.getItem('name')}</Link>
-                                    </li>
-                                    <li className="nav-item mx-2">
-                                        <Link className="nav-link" to="/" onClick={() => logout()}>Salir</Link>
-                                    </li>
-                                </ul>
-                                :
-                                <ul className="navbar-nav">
-                                    <li className="nav-item mx-2">
-                                        <Link className="nav-link" to="/login">Acceder</Link>
-                                    </li>
-                                    <li className="nav-item mx-2 register">
-                                        <Link className="nav-link" to="/signup">Registrar</Link>
-                                    </li>
-                                </ul>
+                        {/* <div className={`collapse navbar-collapse ${isCollapsed ? "" : "show"}`} id="navbarNavDropdown"> */}
+                        {/* usuario logueado: el menú varía si está logueado o no */}
+                        {!menu ?
+                            <ul className="navbar-nav mx-auto">
+                                <li className="nav-item mx-2">
+                                    <NavLink className="nav-link" exact activeClassName="active" aria-current="page" to="/">Inicio</NavLink>
+                                </li>
+                                <li className="nav-item mx-2">
+                                    {/* <NavLink className="nav-link" activeClassName="active" to="/about" onClick={() => setCollapsed(!isCollapsed)}>El Dojo</NavLink> */}
+                                    <NavLink className="nav-link" activeClassName="active" to="/about">El Dojo</NavLink>
+                                </li>
+                                <li className="nav-item dropdown mx-2">
+                                    <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Actividades
+                                    </Link>
+                                    <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><Link className="dropdown-item" to="/">Aikido</Link></li>
+                                        <li><Link className="dropdown-item" to="/">Karate-do</Link></li>
+                                        <li><Link className="dropdown-item" to="/">Meditación Zen</Link></li>
+                                        <li><Link className="dropdown-item" to="/">Yoga</Link></li>
+                                        <li><Link className="dropdown-item" to="/">Tai-Chi</Link></li>
+                                        <li><Link className="dropdown-item" to="/">Idioma Japonés</Link></li>
+                                    </ul>
+                                </li>
+                                <li className="nav-item mx-2">
+                                    <Link className="nav-link" to="/timetables">Horarios</Link>
+                                </li>
+                                <li className="nav-item mx-2">
+                                    <Link className="nav-link" to="/workshop">Cursos</Link>
+                                </li>
+                                <li className="nav-item mx-2">
+                                    <Link className="nav-link" to="/gallery">Galería</Link>
+                                </li>
+                                <li className="nav-item mx-2">
+                                    <NavLink className="nav-link" activeClassName="active" to="/contact">Contacto</NavLink>
+                                </li>
+                            </ul> :
+                            <ul className="navbar-nav mx-auto"><li className="nav-item mx-2"><Link className="nav-link" to="/dashboard">Área Privada</Link></li></ul>}
+                        {menu ?
+                            <ul className="navbar-nav">
+                                <li className="nav-item mx-2">
+                                    <Link className="nav-link" aria-current="page" to="/dashboard">Bienvenido {sessionStorage.getItem('name')}</Link>
+                                </li>
+                                <li className="nav-item mx-2">
+                                    <Link className="nav-link" to="/" onClick={() => logout()}>Salir</Link>
+                                </li>
+                            </ul>
+                            :
+                            <ul className="navbar-nav">
+                                <li className="nav-item mx-2">
+                                    <Link className="nav-link" to="/login">Acceder</Link>
+                                </li>
+                                <li className="nav-item mx-2 register">
+                                    <Link className="nav-link" to="/signup">Registrar</Link>
+                                </li>
+                            </ul>
                         }
                     </div>
                 </div>

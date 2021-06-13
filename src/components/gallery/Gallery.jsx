@@ -1,18 +1,5 @@
 import React from 'react'
-// images
-// import gallery_1 from '../assets/img/yoga2.jpg'
-// import gallery_2 from '../assets/img/aiki.jpg'
-// import gallery_3 from '../assets/img/yoga.jpg'
-// import gallery_4 from '../assets/img/students.jpg'
-// import gallery_5 from '../assets/img/torii.jpg'
-// import gallery_6 from '../assets/img/karatedo.jpg'
-// import gallery_7 from '../assets/img/taichi.jpg'
-// import gallery_8 from '../assets/img/meditation.jpg'
-// import gallery_9 from '../assets/img/japanese.jpg'
-// import gallery_10 from '../assets/img/yoga_stretch.jpg'
-// import gallery_11 from '../assets/img/karate2.jpg'
-// import gallery_12 from '../assets/img/karatebeach.jpg'
-// styles
+// estilos
 import "./gallery.css"
 
 export default function Gallery() {
@@ -21,74 +8,74 @@ export default function Gallery() {
         {
             id: 1,
             title: "Curso de Yoga 2019",
-            image: '%PUBLIC_URL%/assets/images/yoga2.jpg',
+            image: `${process.env.PUBLIC_URL}/assets/images/yoga2.jpg`,
             author: "photo by Hatake Kakashi"
         },
         {
             id: 2,
             title: "Seminario de Aikido de Mirin Kombu 2018",
-            image:'%PUBLIC_URL%/assets/images/aiki.jpg',
+            image:`${process.env.PUBLIC_URL}/assets/images/aiki.jpg`,
             author: "photo by Hatake Kakashi"
         },
         {
             id: 3,
             title: "Yoga",
-            image: '%PUBLIC_URL%/assets/images/yoga.jpg',
+            image: `${process.env.PUBLIC_URL}/assets/images/yoga.jpg`,
             author: "photo by Hatake Kakashi"
 
         },
         {
             id: 4,
             title: "Examen de chounin en la Villa del Viento",
-            image: '%PUBLIC_URL%/assets/images/students.jpg',
+            image: `${process.env.PUBLIC_URL}/assets/images/students.jpg`,
             author: "photo by Hatake Kakashi"
         },
         {
             id: 5,
             title: "Torii",
-            image: '%PUBLIC_URL%/assets/images/torii.jpg',
+            image: `${process.env.PUBLIC_URL}/assets/images/torii.jpg`,
             author: "photo by Hatake Kakashi"
         },
         {
             id: 6,
             title: "Karate-do",
-            image: '%PUBLIC_URL%/assets/images/karatedo.jpg',
+            image: `${process.env.PUBLIC_URL}/assets/images/karatedo.jpg`,
             author: "photo by Hatake Kakashi"
         },
         {
             id: 7,
             title: "Tai-Chi",
-            image: '%PUBLIC_URL%/assets/images/taichi.jpg',
+            image: `${process.env.PUBLIC_URL}/assets/images/taichi.jpg`,
             author: "photo by Hatake Kakashi"
         },
         {
             id: 8,
             title: "Meditation",
-            image: '%PUBLIC_URL%/assets/images/meditation.jpg',
+            image: `${process.env.PUBLIC_URL}/assets/images/meditation.jpg`,
             author: "photo by Hatake Kakashi"
         },
         {
             id: 9,
             title: "Nihongo",
-            image: '%PUBLIC_URL%/assets/images/japanese.jpg',
+            image: `${process.env.PUBLIC_URL}/assets/images/japanese.jpg`,
             author: "photo by Hatake Kakashi"
         },
         {
             id: 10,
             title: "Curso de yoga 2020",
-            image: '%PUBLIC_URL%/assets/images/yoga_stretch.jpg',
+            image: `${process.env.PUBLIC_URL}/assets/images/yoga_stretch.jpg`,
             author: "photo by Hatake Kakashi"
         },
         {
             id: 11,
             title: "Examen karate cinturón azul",
-            image: '%PUBLIC_URL%/assets/images/karate2.jpg',
+            image: `${process.env.PUBLIC_URL}/assets/images/karate2.jpg`,
             author: "photo by Hatake Kakashi"
         },
         {
             id: 12,
             title: "Curso de karate en la playa",
-            image: '%PUBLIC_URL%/assets/images/karatebeach.jpg',
+            image: `${process.env.PUBLIC_URL}/assets/images/karatebeach.jpg`,
             author: "photo by Hatake Kakashi"
         },
     ];
@@ -110,7 +97,7 @@ export default function Gallery() {
                     {
                         galleryImages.map((image) => (
                             <div className="item col-lg-3 col-md-6 mb-4 mb-lg-3" key={image.id}>
-                                <a data-fancybox="gallery" href={image.image} data-caption={`'${image.title}'</br>${image.author}`}>
+                                <a data-fancybox="gallery" href={`${image.image}`} data-caption={`'${image.title}'</br>${image.author}`}>
                                     <img
                                         src={image.image}
                                         title={image.title}
