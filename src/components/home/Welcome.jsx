@@ -2,9 +2,9 @@ import React from 'react'
 import { IconContext } from "react-icons"
 import { GiTwirlyFlower } from 'react-icons/gi'
 import "./welcome.css"
-import image_welcome from '../assets/img/stones2.jpg'
-import image_welcome_2 from '../assets/img/yoga.jpg'
-import image_welcome_3 from '../assets/img/students.jpg'
+// import image_welcome from '../assets/img/stones2.jpg'
+// import image_welcome_2 from '../assets/img/yoga.jpg'
+// import image_welcome_3 from '../assets/img/students.jpg'
 
 
 
@@ -16,13 +16,13 @@ export default function Welcome() {
                     <div className="row">
                         <div className="col-lg-7 p-2 pe-3">
                             <div className="row">
-                                <div className="col-6"><img className="image_welcome rounded-2" src={image_welcome} alt="" /></div>
+                                <div className="col-6"><img className="image_welcome rounded-2" src={`${process.env.PUBLIC_URL}/assets/images/stones2.jpg`} alt="" /></div>
                                 <div className="col-6">
                                     <div className="row g-2">
-                                        <div className="col"><img className="image_welcome_2 rounded-2" src={image_welcome_2} alt="" /></div>
+                                        <div className="col"><img className="image_welcome_2 rounded-2" src={`${process.env.PUBLIC_URL}/assets/images/yoga.jpg`} alt="" /></div>
                                     </div>
                                     <div className="row">
-                                        <div className="col gy-3"><img className="image_welcome_2 rounded-2" src={image_welcome_3} alt="" /></div>
+                                        <div className="col gy-3"><img className="image_welcome_2 rounded-2" src={`${process.env.PUBLIC_URL}/assets/images/students.jpg`} alt="" /></div>
                                     </div>
                                 </div>
                             </div>

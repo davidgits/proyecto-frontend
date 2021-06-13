@@ -1,15 +1,14 @@
 import React from 'react'
+// componentes
 import ContactForm from './ContactForm'
 import Map from './Map'
-// images
-import ImageHeader from '../assets/img/contact.jpg'
-// css
+// estilos
 import "./contact.css"
 
 export default function Contact() {
     return (
         <>
-            <img src={ImageHeader} className="w-100" alt="" />
+            <img src={`${process.env.PUBLIC_URL}/assets/images/contact.jpg`} className="w-100" alt="" />
             {/* header */}
             <div className="text-secondary px-4 py-5 text-center">
                 <div className="py-5">

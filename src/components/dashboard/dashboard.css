@@ -13,10 +13,6 @@
     color: var(--sakura-5);
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-
 .btn.btn-danger {
     color: #fff !important;
     background-color: #dc3545  !important;

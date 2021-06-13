@@ -1,16 +1,7 @@
 import React from 'react'
-// styles
+// estilos
 import './about.css'
-// img
-import ImageHeader from '../assets/img/dojo.jpg'
-import Icon_1 from '../assets/img/about/af-1.png'
-import Icon_2 from '../assets/img/about/af-2.png'
-import Icon_3 from '../assets/img/about/af-3.png'
-import Icon_4 from '../assets/img/about/af-4.png'
-import About_img from '../assets/img/about/about.png'
-import Team_1_img from '../assets/img/about/team-1.png'
-import Team_2_img from '../assets/img/about/team-2.png'
-// icon
+// react-icons
 import { IconContext } from "react-icons"
 import { GiTwirlyFlower } from 'react-icons/gi'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
@@ -21,7 +12,7 @@ export default function About() {
     return (
         <section className="about">
             {/* header image */}
-            <img src={ImageHeader} className="w-100" alt="header_dojo_image" />
+            <img src={`${process.env.PUBLIC_URL}/assets/images/dojo.jpg`} className="w-100" alt="header_dojo_image" />
             {/* header text */}
             <div className="text-secondary px-4 py-5 text-center">
                 <div className="py-5">
@@ -36,14 +27,14 @@ export default function About() {
                 <div className="row">
                     <div className="col-lg-3 col-md-4 col-sm-6">
                         <div className="services__item">
-                            <img src={Icon_1} alt="" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/images/about/af-1.png`} alt="" />
                             <h5>Full Rejuvenation</h5>
                             <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience india!</p>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-4 col-sm-6">
                         <div className="services__item">
-                            <img src={Icon_2} alt="" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/images/about/af-2.png`} alt="" />
                             <h5>Extention Of Spring</h5>
                             <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience
                                 india!</p>
@@ -51,7 +42,7 @@ export default function About() {
                     </div>
                     <div className="col-lg-3 col-md-4 col-sm-6">
                         <div className="services__item">
-                            <img src={Icon_3} alt="" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/images/about/af-3.png`} alt="" />
                             <h5>Against Aging</h5>
                             <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience
                                 india!</p>
@@ -59,7 +50,7 @@ export default function About() {
                     </div>
                     <div className="col-lg-3 col-md-4 col-sm-6">
                         <div className="services__item">
-                            <img src={Icon_4} alt="" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/images/about/af-4.png`} alt="" />
                             <h5>Slim Body</h5>
                             <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience india!</p>
                         </div>
@@ -70,7 +61,7 @@ export default function About() {
             <div className="row mx-0">
                 <div className="col-lg-7 d-flex justify-content-around">
                     <div className="about__pic p-0">
-                        <img src={About_img} alt="" />
+                        <img src={`${process.env.PUBLIC_URL}/assets/images/about/about.png`} alt="" />
                     </div>
                 </div>
                 <div className="col-lg-5 p-3">
@@ -119,7 +110,7 @@ export default function About() {
                             <div className="col-lg-6">
                                 <div className="team__item">
                                     <div className="team__item__pic">
-                                        <img src={Team_1_img} alt="" />
+                                        <img src={`${process.env.PUBLIC_URL}/assets/images/about/team-1.png`} alt="" />
                                     </div>
                                     <div className="team__item__text">
                                         <div className="team__item__title">
@@ -138,7 +129,7 @@ export default function About() {
                             <div className="col-lg-6">
                                 <div className="team__item">
                                     <div className="team__item__pic">
-                                        <img src={Team_2_img} alt="" />
+                                        <img src={`${process.env.PUBLIC_URL}/assets/images/about/team-2.png`} alt="" />
                                     </div>
                                     <div className="team__item__text">
                                         <div className="team__item__title">
@@ -157,7 +148,7 @@ export default function About() {
                             <div className="col-lg-6">
                                 <div className="team__item">
                                     <div className="team__item__pic">
-                                        <img src={Team_1_img} alt="" />
+                                        <img src={`${process.env.PUBLIC_URL}/assets/images/about/team-1.png`} alt="" />
                                     </div>
                                     <div className="team__item__text">
                                         <div className="team__item__title">

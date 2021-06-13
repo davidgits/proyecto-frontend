@@ -1,16 +1,14 @@
 import React from 'react'
 import Course from './Course'
+// estilos
 import "./courses.css"
-import course_img1 from '../assets/img/students.jpg'
-import course_img2 from '../assets/img/yoga.jpg'
-import course_img3 from '../assets/img/aiki.jpg'
 
 export default function Courses() {
 
     const courses = [
         {
             id: 1,
-            imageURL: course_img1,
+            imageURL: "/assets/images/students.jpg",
             date: "20 Jun 2019",
             duration: "14 Days | Start on 10th Every Month",
             title: "100 Hour Yoga Course Rishikesh",
@@ -20,7 +18,7 @@ export default function Courses() {
         },
         {
             id: 2,
-            imageURL: course_img2,
+            imageURL: '/assets/images/yoga.jpg',
             date: "20 Jun 2019",
             duration: "14 Days | Start on 10th Every Month",
             title: "100 Hour Yoga Course Rishikesh",
@@ -30,7 +28,7 @@ export default function Courses() {
         },
         {
             id: 3,
-            imageURL: course_img3,
+            imageURL: '/assets/images/aiki.jpg',
             date: "20 Jun 2019",
             duration: "14 Days | Start on 10th Every Month",
             title: "100 Hour Yoga Course Rishikesh",

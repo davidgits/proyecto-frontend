@@ -1,17 +1,17 @@
 import React from 'react'
 // images
-import gallery_1 from '../assets/img/yoga2.jpg'
-import gallery_2 from '../assets/img/aiki.jpg'
-import gallery_3 from '../assets/img/yoga.jpg'
-import gallery_4 from '../assets/img/students.jpg'
-import gallery_5 from '../assets/img/torii.jpg'
-import gallery_6 from '../assets/img/karatedo.jpg'
-import gallery_7 from '../assets/img/taichi.jpg'
-import gallery_8 from '../assets/img/meditation.jpg'
-import gallery_9 from '../assets/img/japanese.jpg'
-import gallery_10 from '../assets/img/yoga_stretch.jpg'
-import gallery_11 from '../assets/img/karate2.jpg'
-import gallery_12 from '../assets/img/karatebeach.jpg'
+// import gallery_1 from '../assets/img/yoga2.jpg'
+// import gallery_2 from '../assets/img/aiki.jpg'
+// import gallery_3 from '../assets/img/yoga.jpg'
+// import gallery_4 from '../assets/img/students.jpg'
+// import gallery_5 from '../assets/img/torii.jpg'
+// import gallery_6 from '../assets/img/karatedo.jpg'
+// import gallery_7 from '../assets/img/taichi.jpg'
+// import gallery_8 from '../assets/img/meditation.jpg'
+// import gallery_9 from '../assets/img/japanese.jpg'
+// import gallery_10 from '../assets/img/yoga_stretch.jpg'
+// import gallery_11 from '../assets/img/karate2.jpg'
+// import gallery_12 from '../assets/img/karatebeach.jpg'
 // styles
 import "./gallery.css"
 
@@ -21,75 +21,74 @@ export default function Gallery() {
         {
             id: 1,
             title: "Curso de Yoga 2019",
-            image: gallery_1,
-            imagebig: gallery_1,
+            image: '%PUBLIC_URL%/assets/images/yoga2.jpg',
             author: "photo by Hatake Kakashi"
         },
         {
             id: 2,
             title: "Seminario de Aikido de Mirin Kombu 2018",
-            image: gallery_2,
+            image:'%PUBLIC_URL%/assets/images/aiki.jpg',
             author: "photo by Hatake Kakashi"
         },
         {
             id: 3,
             title: "Yoga",
-            image: gallery_3,
+            image: '%PUBLIC_URL%/assets/images/yoga.jpg',
             author: "photo by Hatake Kakashi"
 
         },
         {
             id: 4,
             title: "Examen de chounin en la Villa del Viento",
-            image: gallery_4,
+            image: '%PUBLIC_URL%/assets/images/students.jpg',
             author: "photo by Hatake Kakashi"
         },
         {
             id: 5,
             title: "Torii",
-            image: gallery_5,
+            image: '%PUBLIC_URL%/assets/images/torii.jpg',
             author: "photo by Hatake Kakashi"
         },
         {
             id: 6,
             title: "Karate-do",
-            image: gallery_6,
+            image: '%PUBLIC_URL%/assets/images/karatedo.jpg',
             author: "photo by Hatake Kakashi"
         },
         {
             id: 7,
             title: "Tai-Chi",
-            image: gallery_7,
+            image: '%PUBLIC_URL%/assets/images/taichi.jpg',
             author: "photo by Hatake Kakashi"
         },
         {
             id: 8,
             title: "Meditation",
-            image: gallery_8,
+            image: '%PUBLIC_URL%/assets/images/meditation.jpg',
             author: "photo by Hatake Kakashi"
         },
         {
             id: 9,
             title: "Nihongo",
-            image: gallery_9,
+            image: '%PUBLIC_URL%/assets/images/japanese.jpg',
             author: "photo by Hatake Kakashi"
         },
         {
             id: 10,
             title: "Curso de yoga 2020",
-            image: gallery_10,
+            image: '%PUBLIC_URL%/assets/images/yoga_stretch.jpg',
             author: "photo by Hatake Kakashi"
         },
         {
             id: 11,
             title: "Examen karate cinturón azul",
-            image: gallery_11,
+            image: '%PUBLIC_URL%/assets/images/karate2.jpg',
             author: "photo by Hatake Kakashi"
         },
         {
             id: 12,
             title: "Curso de karate en la playa",
-            image: gallery_12,
+            image: '%PUBLIC_URL%/assets/images/karatebeach.jpg',
             author: "photo by Hatake Kakashi"
         },
     ];

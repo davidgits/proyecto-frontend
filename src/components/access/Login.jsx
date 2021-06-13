@@ -17,7 +17,7 @@ export default function Login() {
         // captura los datos
         const user = { email, password }
         // envía la petición al backend o api
-        await axios.post('/api/auth/signin', user)
+        await axios.post(`${process.env.REACT_APP_STUDENTS_API_URL}/api/auth/signin`, user)
             .then((response) => {
                 const message = response.data.message
                 // guardamos datos en la session storage
@@ -63,6 +63,7 @@ export default function Login() {
                      * is an instance of XMLHttpRequest in the browser and an instance
                      * of http.ClientRequest in Node.js
                      */
+                    console.log('por aquí pasó');
                     console.log(error.request);
                 } else {
                     // Something happened in setting up the request and triggered an Error

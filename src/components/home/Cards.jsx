@@ -1,11 +1,6 @@
 import React from 'react'
+// componentes
 import Card from "./Card";
-import card_img_1 from '../assets/img/aiki.jpg'
-import card_img_2 from '../assets/img/karatedo.jpg'
-import card_img_3 from '../assets/img/meditation.jpg'
-import card_img_4 from '../assets/img/yoga2.jpg'
-import card_img_5 from '../assets/img/taichi.jpg'
-import card_img_6 from '../assets/img/japanese.jpg'
 
 export default function Cards() {
 
@@ -14,7 +9,7 @@ export default function Cards() {
             id: 1,
             title: "Aikido",
             subtitle: "Niños y Adultos",
-            image: card_img_1,
+            image: '/assets/images/aiki.jpg',
             url: 'https://ciclos.iesruizgijon.es/',
             // text: 'Clases para Niños y Adultos.'
         },
@@ -22,35 +17,35 @@ export default function Cards() {
             id: 2,
             title: "Karate-do",
             subtitle: "Niños y Adultos",
-            image: card_img_2,
+            image: '/assets/images/karatedo.jpg',
             url: 'https://yanderedev.wordpress.com/'
         },
         {
             id: 3,
             title: "Meditación Zen",
             subtitle: "Grupos reducidos",
-            image: card_img_3,
+            image: '/assets/images/meditation.jpg',
             url: 'https://www.youtube.com/watch?v=1_DXtP0XyDw&t=1212s'
         },
         {
             id: 4,
             title: "Yoga",
             subtitle: "Todos los niveles",
-            image: card_img_4,
+            image: '/assets/images/yoga2.jpg',
             url: 'https://www.youtube.com/watch?v=1_DXtP0XyDw&t=1212s'
         },
         {
             id: 5,
             title: "Tai-Chi",
             subtitle: "Solo fines de semana",
-            image: card_img_5,
+            image: '/assets/images/taichi.jpg',
             url: 'https://www.youtube.com/watch?v=1_DXtP0XyDw&t=1212s'
         },
         {
             id: 6,
             title: "Clases de Japonés",
             subtitle: "Profesora nativa",
-            image: card_img_6,
+            image: '/assets/images/japanese.jpg',
             url: 'https://www.youtube.com/watch?v=1_DXtP0XyDw&t=1212s'
         },
     ];

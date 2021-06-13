@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+// estilos
 import './courses.css'
 
 export default function Course({ imageURL, date, duration, title, teacher_name, teacher_info, url }) {
     return (
             <div className="classes__item">
                 <div className="classes__item__pic set-bg overflow" >
-                    <img src={imageURL} alt="imagen" className='card-img-top'></img>
+                    <img src={`${process.env.PUBLIC_URL}${imageURL}`} alt="imagen" className='card-img-top'></img>
                     <span>{date}</span>
                 </div>
                 <div className="classes__item__text">

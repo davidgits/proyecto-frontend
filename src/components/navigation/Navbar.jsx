@@ -129,9 +129,9 @@ export default function Navbar() {
                                     <li className="nav-item mx-2">
                                         <Link className="nav-link" to="/login">Acceder</Link>
                                     </li>
-                                    {/* <li className="nav-item mx-2">
+                                    <li className="nav-item mx-2 register">
                                         <Link className="nav-link" to="/signup">Registrar</Link>
-                                    </li> */}
+                                    </li>
                                 </ul>
                         }
                     </div>

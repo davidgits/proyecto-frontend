@@ -3,16 +3,16 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-d
 // estilos
 import "./App.css";
 // componentes
-import Navbar from "./components/Navbar";
-import Signup from "./components/Signup";
-import Login from "./components/Login";
-import Dashboard from "./components/Dashboard";
-import Edit from "./components/Edit";
-import Index from "./components/Index";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Gallery from "./components/Gallery";
+import Navbar from "./components/navigation/Navbar";
+import Signup from "./components/access/Signup";
+import Login from "./components/access/Login";
+import Dashboard from "./components/dashboard/Dashboard";
+import Edit from "./components/dashboard/Edit";
+import Index from "./components/home/Index";
+import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
+import Footer from "./components/footer/Footer";
+import Gallery from "./components/gallery/Gallery";
 
 // PROTEGEMOS LAS RUTAS:
 const isAuthenticated = () => {

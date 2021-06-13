@@ -48,3 +48,8 @@
         flex-direction: column;
     }
 }
+
+/* REGISTER */
+li.register {
+    display: none;
+}
