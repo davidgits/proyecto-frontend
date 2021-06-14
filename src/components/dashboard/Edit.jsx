@@ -27,6 +27,7 @@ export default function Edit(props) {
         getStudent()
         setTActivity(['Aikido', 'Karate', 'Meditación'])
         setActivitySelect('aikido')
+        // eslint-disable-next-line
     }, [])
 
     const getStudent = async () => {

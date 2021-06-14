@@ -32,7 +32,9 @@ export default function Dashboard() {
 
     // hook que carga el componente
     useEffect(() => {
+        
         getStudents()
+        // eslint-disable-next-line
     }, [])
 
     // PAGINACIÓN
