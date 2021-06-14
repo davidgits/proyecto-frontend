@@ -33,7 +33,7 @@ export default function Edit(props) {
     const getStudent = async () => {
         const id = props.match.params.id // recoge el id del alumno que se pasa en la ruta por parámetro
 
-        await axios.get(`${process.env.REACT_APP_STUDENTS_API_URL}/api/students` + id, headers)
+        await axios.get(`${process.env.REACT_APP_STUDENTS_API_URL}/api/students/` + id, headers)
             .then((response) => {
                 console.log(response.data);
                 // guarda los datos recibidos en el estado
@@ -81,7 +81,7 @@ export default function Edit(props) {
             tactivity: activityselect
         }
 
-        await axios.put(`${process.env.REACT_APP_STUDENTS_API_URL}/api/students` + id, student, headers)
+        await axios.put(`${process.env.REACT_APP_STUDENTS_API_URL}/api/students/` + id, student, headers)
             .then((response) => {
                 console.log(response.data);
                 const message = response.data.message
