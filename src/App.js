@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+
 // estilos
 import "./App.css";
 // componentes
@@ -16,10 +17,29 @@ import Gallery from "./components/gallery/Gallery";
 import Workshop from "./components/workshop/Workshop";
 import Timetables from "./components/timetables/Timetables";
 
+// OBTENEMOS COOKIE CON JS
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == " ") c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+// console.log(getCookie("token"));
+
 // PROTEGEMOS LAS RUTAS:
 const isAuthenticated = () => {
     const token = sessionStorage.getItem("token");
+    const tokenCookie = getCookie("token");
+    const userCookie = getCookie("user")
     if (token) {
+        return true;
+    } else if (tokenCookie !== "") {
+        sessionStorage.setItem("token", tokenCookie);
+        sessionStorage.setItem("name", userCookie);
         return true;
     } else {
         return false;

@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+// cookies
+import { useCookies } from "react-cookie";
+// peticiones al servidor
 import axios from 'axios'
 // alertas
 import Swal from 'sweetalert2'
@@ -11,6 +14,8 @@ export default function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const [cookies, setCookie, removeCookie] = useCookies(["user", "token"])
+
     const signin = async (e) => {
         // previene el comportamiento por defecto
         e.preventDefault()
@@ -22,12 +27,22 @@ export default function Login() {
                 const message = response.data.message
                 // guardamos datos en la session storage
                 const token = response.data.token
-                console.log(token);
                 const username = response.data.username
-                // const userId = response.data.id
+                
                 sessionStorage.setItem('token', token)
                 sessionStorage.setItem('name', username)
-                // sessionStorage.setItem('userId', userId)
+                // set cookies
+                setCookie("user", username, {
+                    path: "/",
+                    sameSite: "none",
+                    secure: true
+                }) 
+                setCookie("token", token, {
+                    path: "/",
+                    sameSite: "none",
+                    secure: true
+                })               
+
                 // mensaje de login correcto
                 Swal.fire({
                     icon: 'success',
@@ -63,7 +78,7 @@ export default function Login() {
                      * is an instance of XMLHttpRequest in the browser and an instance
                      * of http.ClientRequest in Node.js
                      */
-                    console.log('por aquí pasó');
+                    // console.log('por aquí pasó');
                     console.log(error.request);
                 } else {
                     // Something happened in setting up the request and triggered an Error

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+// cookies
+import {useCookies} from 'react-cookie'
 // react-icons
 import { IconContext } from "react-icons"
 import { GiTwirlyFlower } from 'react-icons/gi'
@@ -9,6 +11,8 @@ import { FaEnvelope, FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react
 import "./navbar.css"
 
 export default function Navbar() {
+
+    const [cookies, setCookie, removeCookie] = useCookies(["user", "token"]);
 
     // ver si el usuario está logueado:
     const [menu, setMenu] = useState(false)
@@ -23,7 +27,10 @@ export default function Navbar() {
     // borra los datos de sesión
     const logout = () => {
         sessionStorage.clear()
+        removeCookie("user")
+        removeCookie("token")
         window.location.href = '/'
+        console.log("session storage & cookies successfully removed!");
     }
 
     // cierra automáticamente el menú desplegable en pantallas pequeñas al hacer click en enlace
