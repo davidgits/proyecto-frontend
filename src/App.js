@@ -16,6 +16,7 @@ import Footer from "./components/footer/Footer";
 import Gallery from "./components/gallery/Gallery";
 import Workshop from "./components/workshop/Workshop";
 import Timetables from "./components/timetables/Timetables";
+import Help from "./components/help/Help";
 
 // OBTENEMOS COOKIE CON JS
 function getCookie(cname) {
@@ -71,6 +72,7 @@ function App() {
                 <Route path="/gallery" component={Gallery} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/login" component={Login} />
+                <Route path="/help" component={Help}/>
             </Switch>
             <Footer />
         </Router>

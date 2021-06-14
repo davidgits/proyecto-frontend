@@ -84,7 +84,7 @@ export default function Footer() {
                                     <h5>Sobre Nosotros</h5>
                                     <ul>
                                         {/* TODO modificar links */}
-                                        <li><a href="/">Nuestro Proyecto</a></li>
+                                        <li><a href="/help">Ayuda del Sitio</a></li>
                                         <li><a href="/">Nuestro Objetivo</a></li>
                                         <li><a href="/">Conoce a los Instructores</a></li>
                                         <li><a href="/">Secretaría</a></li>
