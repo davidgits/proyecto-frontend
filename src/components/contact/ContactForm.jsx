@@ -3,6 +3,8 @@ import axios from 'axios'
 // icono
 import { IconContext } from "react-icons"
 import { GiTwirlyFlower } from 'react-icons/gi'
+// alertas
+import Swal from 'sweetalert2'
 // css
 import "./contact_form.css"
 
@@ -21,18 +23,26 @@ export default function Contactform() {
 
         const emailBody = { name, email, phone, subject, message }
 
-        await axios.post('/api/mailer/send-email', emailBody)
+        await axios.post(`${process.env.REACT_APP_STUDENTS_API_URL}/api/mailer/send-email`, emailBody)
             .then((response) => {
                 const message = response.data.message
-                // TODO
-                // implementar sweet alerts
+                Swal.fire({
+                    icon: 'success',
+                    title: message,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 console.log(message);
             })
             .catch((error) => {
                 if (error.response) {
                     const message = error.response.data.message
-                    // TODO
-                    // implementar sweet alerts
+                    Swal.fire({
+                        icon: 'error',
+                        title: message,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                     console.log(message);
                 } else if (error.request) {
                     console.log(error.request);
