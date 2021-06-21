@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "./index.css"
 import Welcome from './Welcome'
 import Cards from './Cards'
@@ -25,7 +26,7 @@ export default function Index() {
                         <h2 className="carousel-caption-title">Zenshin Dojo</h2>
                         <h3>Escuela de Artes Marciales y Centro Cultural Japonés</h3>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, dolores.</p>
-                        <p><a className="btn btn-lg btn-primary" href="/about">Saber más</a></p>
+                        <p><Link className="btn btn-lg btn-primary" to="/about">Saber más</Link></p>
                     </div>
                 </div>
                 <div className="container">
@@ -33,7 +34,7 @@ export default function Index() {
                         <h2 className="carousel-caption-title">Zenshin Dojo</h2>
                         <h3>Escuela de Artes Marciales y Centro Cultural Japonés</h3>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, dolores.</p>
-                        <p><a className="btn btn-md btn-primary" href="/about">Saber más</a></p>
+                        <p><Link className="btn btn-md btn-primary" to="/about">Saber más</Link></p>
                         <hr />
                     </div>
                 </div>

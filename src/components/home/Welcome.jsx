@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { IconContext } from "react-icons"
 import { GiTwirlyFlower } from 'react-icons/gi'
 import "./welcome.css"
@@ -35,7 +36,7 @@ export default function Welcome() {
                             <span>“Lorem ipsum dolor sit amet consectetur adipisicing.”</span>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque quos nihil, doloremque, ducimus alias earum quam velit cum veniam repudiandae sapiente quaerat eveniet laboriosam excepturi tempora quo dolorem sint voluptates porro beatae quisquam blanditiis officia unde repellendus. Deserunt, tempore minus?</p>
                             <p className="para-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur similique accusamus esse libero nesciunt tenetur molestiae in iure! Deleniti tenetur necessitatibus vel. Aut dolores suscipit animi nobis facere laboriosam nostrum doloremque fugiat ab quisquam! Dicta deleniti fuga cupiditate optio. Eligendi necessitatibus numquam voluptates! Dolores, a.</p>
-                            <a href="/timetables" className="btn btn-primary">Horario Clases</a>
+                            <Link to="/timetables" className="btn btn-primary">Horario Clases</Link>
                         </div>
                     </div>
                 </div>

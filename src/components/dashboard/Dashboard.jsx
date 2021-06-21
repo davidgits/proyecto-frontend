@@ -32,7 +32,7 @@ export default function Dashboard() {
 
     // hook que carga el componente
     useEffect(() => {
-        
+
         getStudents()
         // eslint-disable-next-line
     }, [])
@@ -122,6 +122,7 @@ export default function Dashboard() {
 
     return (
         <section className="row dash">
+
             {/* ENCABEZADO */}
             <header className="dash__header">
                 <div className="col-md-6 ms-5 pt-3">
@@ -150,6 +151,7 @@ export default function Dashboard() {
                     />
                 </div>
             </div>
+
             {/* TABLA ALUMNOS */}
             <div className="row __table">
                 <div className="col-md-10 mx-auto">
@@ -181,7 +183,8 @@ export default function Dashboard() {
                                             :
                                             currentStuds.map((student, i) => (
                                                 <tr key={student._id}>
-                                                    <td>{(i + 1) * (currentPage)}</td>
+                                                    {/* <td>{(i + 1) * (currentPage)}</td> */}
+                                                    <td>{indexOfFirstStud + (i + 1)}</td>
                                                     <td>{student.name}</td>
                                                     <td>{student.surname}</td>
                                                     <td>{student.dni}</td>
