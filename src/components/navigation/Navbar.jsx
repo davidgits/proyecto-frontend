@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 // cookies
-import {useCookies} from 'react-cookie'
+import { useCookies } from 'react-cookie'
 // react-icons
 import { IconContext } from "react-icons"
 import { GiTwirlyFlower } from 'react-icons/gi'
@@ -65,12 +65,13 @@ export default function Navbar() {
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="https://www.instagram.com/isshindojo" target="true">
-                            <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: '1.2em' } }}><FaYoutube/></IconContext.Provider>
+                            <IconContext.Provider value={{ style: { verticalAlign: 'middle', fontSize: '1.2em' } }}><FaYoutube /></IconContext.Provider>
                         </a>
                     </li>
                 </ul>
-                {/* TOP NAVBAR END */}
             </nav>
+            {/* TOP-NAVBAR END */}
+
             {/* NAVBAR START */}
             <nav className="navbar navbar-expand-lg navbar-light bg-light pt-0">
                 <div className="container-fluid">
@@ -93,11 +94,11 @@ export default function Navbar() {
                         {!menu ?
                             <ul className="navbar-nav mx-auto">
                                 <li className="nav-item mx-2">
-                                    <NavLink className="nav-link" exact activeClassName="active" aria-current="page" to="/">Inicio</NavLink>
+                                    <NavLink className="nav-link" exact activeClassName="selected" aria-current="page" to="/">Inicio</NavLink>
                                 </li>
                                 <li className="nav-item mx-2">
                                     {/* <NavLink className="nav-link" activeClassName="active" to="/about" onClick={() => setCollapsed(!isCollapsed)}>El Dojo</NavLink> */}
-                                    <NavLink className="nav-link" activeClassName="active" to="/about">El Dojo</NavLink>
+                                    <NavLink className="nav-link" activeClassName="selected" to="/about">El Dojo</NavLink>
                                 </li>
                                 <li className="nav-item dropdown mx-2">
                                     <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -113,19 +114,19 @@ export default function Navbar() {
                                     </ul>
                                 </li>
                                 <li className="nav-item mx-2">
-                                    <Link className="nav-link" to="/timetables">Horarios</Link>
+                                    <NavLink className="nav-link" activeClassName="selected" to="/timetables">Horarios</NavLink>
                                 </li>
                                 <li className="nav-item mx-2">
-                                    <Link className="nav-link" to="/workshop">Cursos</Link>
+                                    <NavLink className="nav-link" activeClassName="selected" to="/workshop">Cursos</NavLink>
                                 </li>
                                 <li className="nav-item mx-2">
-                                    <Link className="nav-link" to="/gallery">Galería</Link>
+                                    <NavLink className="nav-link" activeClassName="selected" to="/gallery">Galería</NavLink>
                                 </li>
                                 <li className="nav-item mx-2">
-                                    <NavLink className="nav-link" activeClassName="active" to="/contact">Contacto</NavLink>
+                                    <NavLink className="nav-link" activeClassName="selected" to="/contact">Contacto</NavLink>
                                 </li>
                             </ul> :
-                            <ul className="navbar-nav mx-auto"><li className="nav-item mx-2"><Link className="nav-link" to="/dashboard">Área Privada</Link></li></ul>}
+                            <ul className="navbar-nav mx-auto"><li className="nav-item mx-2"><NavLink className="nav-link" to="/dashboard">Área Privada</NavLink></li></ul>}
                         {menu ?
                             <ul className="navbar-nav">
                                 <li className="nav-item mx-2">

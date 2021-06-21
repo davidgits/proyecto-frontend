@@ -1,5 +1,4 @@
-/* Variables */
-
+/* VARIABLES */
 :root {
 
     /* color palette */
@@ -18,7 +17,7 @@
     --about-right: url("./assets/img/background-right.png");    
 }
 
-/* Fonts */
+/* FONTS */
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
@@ -27,9 +26,20 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Forms */
+/* FORMS */
 .form-control:focus {
     border-color: #e9b1cd !important;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 177, 205, 0.6) !important;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 177, 205, 0.6) !important;
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+    margin-left: 2em;
+    margin-top: 1em;
+    position: absolute;
+}
+
+.breadcrumb a {
+    color: var(--sakura-4);
 }

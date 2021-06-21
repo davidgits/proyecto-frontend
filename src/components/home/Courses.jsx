@@ -10,30 +10,30 @@ export default function Courses() {
             id: 1,
             imageURL: "/assets/images/students.jpg",
             date: "20 Jun 2019",
-            duration: "14 Days | Start on 10th Every Month",
-            title: "100 Hour Yoga Course Rishikesh",
-            teacher_name: "Jordan Lawson",
-            teacher_info: "- Yoga Teacher",
+            duration: "3 Días | Comienza a las 10:00h",
+            title: "II Seminario de Karate-do",
+            teacher_name: "Jules Olsen sensei",
+            teacher_info: "5º dan Shotokai",
             url: "/"
         },
         {
             id: 2,
             imageURL: '/assets/images/yoga.jpg',
             date: "20 Jun 2019",
-            duration: "14 Days | Start on 10th Every Month",
-            title: "100 Hour Yoga Course Rishikesh",
+            duration: "2 Días | Comienza a las 10:00h",
+            title: "Curso de Yoga Rishikesh",
             teacher_name: "Jordan Lawson",
-            teacher_info: "- Yoga Teacher",
+            teacher_info: "Yoga Teacher",
             url: "/"
         },
         {
             id: 3,
             imageURL: '/assets/images/aiki.jpg',
             date: "20 Jun 2019",
-            duration: "14 Days | Start on 10th Every Month",
-            title: "100 Hour Yoga Course Rishikesh",
-            teacher_name: "Jordan Lawson",
-            teacher_info: "- Yoga Teacher",
+            duration: "3 Días | Comienza a las 11:00h",
+            title: "Curso de Aikido",
+            teacher_name: "Jamie Ramírez",
+            teacher_info: "6º Dan Aikikai",
             url: "/"
         },
     ]
@@ -43,9 +43,8 @@ export default function Courses() {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="section-title normal-title">
-                            <h2>Upcoming Courses</h2>
-                            <p>The trainings are multi-style and you will learn and practice Hatha Vinyasa (flow)<br /> and
-                                Yin Yoga.</p>
+                            <h2>Próximos Cursos</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum sed at rerum impedit, architecto tempora eveniet officiis.</p>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 // estilos
 import "./gallery.css"
 
@@ -14,7 +15,7 @@ export default function Gallery() {
         {
             id: 2,
             title: "Seminario de Aikido de Mirin Kombu 2018",
-            image:`${process.env.PUBLIC_URL}/assets/images/aiki.jpg`,
+            image: `${process.env.PUBLIC_URL}/assets/images/aiki.jpg`,
             author: "photo by Hatake Kakashi"
         },
         {
@@ -82,6 +83,13 @@ export default function Gallery() {
 
     return (
         <div className="container">
+            {/* breadcrub */}
+            <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><Link to="/">Inicio</Link></li>
+                    <li className="breadcrumb-item active" aria-current="page">Galería</li>
+                </ol>
+            </nav>
             {/* title */}
             <div className="text-secondary px-4 py-5 text-center">
                 <div className="py-5">

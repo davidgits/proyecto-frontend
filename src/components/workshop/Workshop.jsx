@@ -1,9 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Courses from '../home/Courses'
 
 export default function Workshop() {
     return (
         <section className="workshop">
+            {/* breadcrub */}
+            <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><Link to="/">Inicio</Link></li>
+                    <li className="breadcrumb-item active" aria-current="page">Cursos</li>
+                </ol>
+            </nav>
 
             {/* header image */}
             <img src={`${process.env.PUBLIC_URL}/assets/images/workshop.jpg`} className="w-100" alt="header_dojo_image" />

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Carousel from './Carousel'
 // estilos
 import './about.css'
@@ -10,6 +11,13 @@ import { GiTwirlyFlower } from 'react-icons/gi'
 export default function About() {
     return (
         <section className="about">
+            {/* breadcrub */}
+            <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><Link to="/">Inicio</Link></li>
+                    <li className="breadcrumb-item active" aria-current="page">El Dojo</li>
+                </ol>
+            </nav>
             {/* header image */}
             <img src={`${process.env.PUBLIC_URL}/assets/images/dojo.jpg`} className="w-100" alt="header_dojo_image" />
             {/* header text */}
@@ -17,41 +25,40 @@ export default function About() {
                 <div className="py-5">
                     <h1 className="display-5 fw-bold">El Dojo</h1>
                     <div className="col-lg-6 mx-auto">
-                        <p className="fs-5 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                        <p className="fs-5 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto libero unde quidem qui aut ullam cumque quisquam vitae, nam dicta quo? Magnam at voluptatem aut illo unde dolorem cumque mollitia in eius, recusandae repudiandae.</p>
                     </div>
                 </div>
             </div>
+
             {/* services */}
             <div className="about__services p-5">
                 <div className="row">
                     <div className="col-lg-3 col-md-4 col-sm-6">
                         <div className="services__item">
                             <img src={`${process.env.PUBLIC_URL}/assets/images/about/af-1.png`} alt="" />
-                            <h5>Full Rejuvenation</h5>
-                            <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience india!</p>
-                        </div>
-                    </div>
-                    <div className="col-lg-3 col-md-4 col-sm-6">
-                        <div className="services__item">
-                            <img src={`${process.env.PUBLIC_URL}/assets/images/about/af-2.png`} alt="" />
-                            <h5>Extention Of Spring</h5>
-                            <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience
-                                india!</p>
-                        </div>
-                    </div>
-                    <div className="col-lg-3 col-md-4 col-sm-6">
-                        <div className="services__item">
-                            <img src={`${process.env.PUBLIC_URL}/assets/images/about/af-3.png`} alt="" />
-                            <h5>Against Aging</h5>
-                            <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience
-                                india!</p>
+                            <h5>Mejora tu autoestima</h5>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos esse nulla quisquam commodi eum!</p>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-4 col-sm-6">
                         <div className="services__item">
                             <img src={`${process.env.PUBLIC_URL}/assets/images/about/af-4.png`} alt="" />
-                            <h5>Slim Body</h5>
-                            <p>Grab the opportunity to deepen your own yoga practice, relax, restore and experience india!</p>
+                            <h5>Ponte en forma!</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum cumque vel tempora ullam dolorum veniam? Delectus, voluptates.</p>
+                        </div>
+                    </div>
+                    <div className="col-lg-3 col-md-4 col-sm-6">
+                        <div className="services__item">
+                            <img src={`${process.env.PUBLIC_URL}/assets/images/about/af-2.png`} alt="" />
+                            <h5>Encuentra el equilibrio</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti officia magni tempore vero autem temporibus quaerat aliquam.</p>
+                        </div>
+                    </div>
+                    <div className="col-lg-3 col-md-4 col-sm-6">
+                        <div className="services__item">
+                            <img src={`${process.env.PUBLIC_URL}/assets/images/about/af-3.png`} alt="" />
+                            <h5>Para todas las edades</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam porro nihil labore ipsa ratione. Explicabo, corrupti minima?</p>
                         </div>
                     </div>
                 </div>
@@ -69,22 +76,27 @@ export default function About() {
                             <IconContext.Provider value={{ className: 'logo-icon', style: { verticalAlign: 'middle', fontSize: '4em' } }}>
                                 <GiTwirlyFlower />
                             </IconContext.Provider>
-                            <h2>What We Do</h2>
-                            <p>To be invited to the nearest Cali center and get free physical advice to learn more about
-                                the program.</p>
+                            <h2>Grupos y Niveles</h2>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa sint ipsam autem reprehenderit nam saepe consectetur molestias. Culpa, vel eaque.</p>
                         </div>
                         <div className="about__bar">
                             <div className="about__bar__item">
-                                <p>Breathing</p>
+                                <h3>Tai-Chi (adultos - sábados) <span className="badge bg-secondary">New</span></h3>
                             </div>
                             <div className="about__bar__item">
-                                <p>Methabolism</p>
+                                <h3>Aikido (niños y adultos - tarde)</h3>
                             </div>
                             <div className="about__bar__item">
-                                <p>Flexibility</p>
+                                <h3>Karate-do (niños y adultos - tarde)</h3>
                             </div>
                             <div className="about__bar__item">
-                                <p>Strongness</p>
+                                <h3>Yoga (adultos - mañana y tarde)</h3>
+                            </div>
+                            <div className="about__bar__item">
+                                <h3>Meditación Zen (consultar) <span className="badge bg-secondary">New</span></h3>
+                            </div>
+                            <div className="about__bar__item">
+                                <h3>Idioma Japonés (grupos reducidos - tarde) <span className="badge bg-secondary">New</span></h3>
                             </div>
                         </div>
                     </div>
@@ -99,13 +111,13 @@ export default function About() {
                                 <IconContext.Provider value={{ className: 'logo-icon', style: { verticalAlign: 'middle', fontSize: '4em' } }}>
                                     <GiTwirlyFlower />
                                 </IconContext.Provider>
-                                <h2>Meet Our Team</h2>
-                                <p>We search the entire world to provide you with passionate, authentic Indian Yoga</p>
+                                <h2>Nuestros Instructores</h2>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum accusamus possimus doloremque veritatis odit.</p>
                             </div>
                         </div>
                     </div>
                     <div className="row mt-5 pt-3">
-                      <Carousel/>
+                        <Carousel />
                     </div>
                 </div>
             </section>

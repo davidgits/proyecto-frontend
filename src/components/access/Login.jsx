@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom'
 // cookies
 import { useCookies } from "react-cookie";
 // peticiones al servidor
@@ -91,6 +92,13 @@ export default function Login() {
 
     return (
         <div className='container-fluid login'>
+            {/* breadcrub */}
+            <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><Link to="/">Inicio</Link></li>
+                    <li className="breadcrumb-item active" aria-current="page">Acceder</li>
+                </ol>
+            </nav>
             <div className="row">
                 <div className="col-sm-8 col-md-6 col-lg-4 mx-auto p-5">
                     <div className="card">

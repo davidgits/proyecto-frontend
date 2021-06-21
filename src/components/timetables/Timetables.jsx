@@ -1,146 +1,118 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+// componente horario
+import Timetable from './Timetable'
+// horarios json
+import { timeTablesData } from './timeTablesData'
+// styles
 import './timetables.css'
 
 export default function Timetables() {
+
+    const timetables = timeTablesData;
+
+    // const timetables = [
+
+    //     {
+    //         id: 1,
+    //         title: "Aikido",
+    //         groups: [
+    //             {
+    //                 id: 1,
+    //                 name: "Adultos",
+    //                 days: "Lun, Mie, Vie",
+    //                 time: "18:30 - 19:30",
+    //             },
+    //             {
+    //                 id: 2,
+    //                 name: "Niños (5-12 años)",
+    //                 days: "Mar, Jue",
+    //                 time: "18:30 - 19:30",
+    //             }
+    //         ],
+    //         image: "/assets/images/aiki1.jpg",
+    //         tag: "nav-aiki"
+    //     },
+    //     {
+    //         id: 2,
+    //         title: "Karate",
+    //         groups: [
+    //             {
+    //                 id: 1,
+    //                 name: "Adultos",
+    //                 days: "Lun, Mie, Vie",
+    //                 time: "17:30 - 18:30",
+    //             },
+    //             {
+    //                 id: 2,
+    //                 name: "Niños (5-12 años)",
+    //                 days: "Mar, Jue",
+    //                 time: "17:30 - 18:30",
+    //             }
+    //         ],
+    //         image: "/assets/images/karate2.jpg",
+    //         tag: "nav-karate"
+    //     },
+    //     {
+    //         id: 3,
+    //         title: "Meditación Zen",
+    //         groups: [
+    //             {
+    //                 id: 1,
+    //                 name: "Adultos",
+    //                 days: "Sab",
+    //                 time: "9:00 - 10:00",
+    //             }
+    //         ],
+    //         image: "/assets/images/meditation.jpg",
+    //         tag: "nav-zen"
+    //     },
+    // ]
+    
     return (
         <section className="timetables">
+            {/* breadcrub */}
+            <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><Link to="/">Inicio</Link></li>
+                    <li className="breadcrumb-item active" aria-current="page">Horarios</li>
+                </ol>
+            </nav>
+            {/* header image */}
+            <img src={`${process.env.PUBLIC_URL}/assets/images/reigei.jpg`} className="w-100" alt="header_dojo_image" />
+            {/* header text */}
+            <div className="text-secondary px-4 py-5 text-center">
+                <div className="py-2">
+                    <h1 className="display-5 fw-bold">Horarios</h1>
+                </div>
+            </div>
 
-            {/* classes Section Begin */}
-            <section className="classNamees-details spad">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-4">
-                            <div className="classNamees__sidebar">
-                                <div className="classNamees__sidebar__item classNamees__sidebar__item--info">
-                                    <h4>classNamees Information</h4>
-                                    <ul className="classNamees__sidebar__item__widget">
-                                        <li><span className="icon_calendar"></span> Mon, Wed, Fri</li>
-                                        <li><span className="icon_clock_alt"></span> 18:30 - 19:30</li>
-                                    </ul>
-                                    <ul className="classNamees__sidebar__item__id">
-                                        <li><span className="icon_pin_alt"></span> 184 Main Collins Streets, New York</li>
-                                        <li><span className="icon_id"></span> Jordan Lawson</li>
-                                    </ul>
-                                    <a href="/" className="sidebar-btn">JOIN NOW</a>
-                                </div>
-                                <div className="classNamees__sidebar__item">
-                                    <h4>About Instructor</h4>
-                                    <div className="classNamees__sidebar__instructor">
-                                        <div className="classNamees__sidebar__instructor__pic">
-                                            <img src="img/classNamees-details/classNamees-instructor.png" alt="" />
-                                        </div>
-                                        <div className="classNamees__sidebar__instructor__text">
-                                            <div className="classNamees__sidebar__instructor__title">
-                                                <h4>Tracy Maclaren</h4>
-                                                <span>Yoga Teacher</span>
-                                            </div>
-                                            <p>Yoga & Therapy Certificate of<br /> Uttarakhand University Sanskirt</p>
-                                            <div className="classNamees__sidebar__instructor__social">
-                                                <a href="/"><span className="social_facebook"></span></a>
-                                                <a href="/"><span className="social_twitter"></span></a>
-                                                <a href="/"><span className="social_instagram"></span></a>
-                                                <a href="/"><span className="social_linkedin"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="classNamees__sidebar__item">
-                                    <h4>Review & Comment</h4>
-                                    <div className="classNamees__sidebar__comment__list">
-                                        <div className="classNamees__sidebar__comment">
-                                            <div className="classNamees__sidebar__comment__pic">
-                                                <img src="img/classNamees-details/comment-1.png" alt="" />
-                                                <div className="classNamees__sidebar__comment__rating">
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star-half-o"></i>
-                                                </div>
-                                            </div>
-                                            <div className="classNamees__sidebar__comment__text">
-                                                <span>04 Mar 2018</span>
-                                                <h6>Brandon Kelley</h6>
-                                                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-                                                    adipisci velit,</p>
-                                            </div>
-                                        </div>
-                                        <div className="classNamees__sidebar__comment">
-                                            <div className="classNamees__sidebar__comment__pic">
-                                                <img src="img/classNamees-details/comment-2.png" alt="" />
-                                                <div className="classNamees__sidebar__comment__rating">
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star-half-o"></i>
-                                                </div>
-                                            </div>
-                                            <div className="classNamees__sidebar__comment__text">
-                                                <span>04 Mar 2018</span>
-                                                <h6>Christina Kelley</h6>
-                                                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+            {/* TIMETABLE TABS */}
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-md-8 p-5 mx-auto">
+                        <nav>
+                            <div className="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button className="nav-link active" id="nav-aiki-tab" data-bs-toggle="tab" data-bs-target="#nav-aiki" type="button" role="tab" aria-controls="nav-aiki" aria-selected="true">Aikido</button>
+                                <button className="nav-link" id="nav-karate-tab" data-bs-toggle="tab" data-bs-target="#nav-karate" type="button" role="tab" aria-controls="nav-karate" aria-selected="false">Karate-do</button>
+                                <button className="nav-link" id="nav-zen-tab" data-bs-toggle="tab" data-bs-target="#nav-zen" type="button" role="tab" aria-controls="nav-zen" aria-selected="false">Meditación Zen</button>
+                                <button className="nav-link" id="nav-yoga-tab" data-bs-toggle="tab" data-bs-target="#nav-yoga" type="button" role="tab" aria-controls="nav-yoga" aria-selected="false">Yoga</button>
+                                <button className="nav-link" id="nav-tai-tab" data-bs-toggle="tab" data-bs-target="#nav-tai" type="button" role="tab" aria-controls="nav-tai" aria-selected="false">Tai-Chi</button>
+                                <button className="nav-link" id="nav-jap-tab" data-bs-toggle="tab" data-bs-target="#nav-jap" type="button" role="tab" aria-controls="nav-jap" aria-selected="false">Japonés</button>
                             </div>
-                        </div>
-                        <div className="col-lg-8">
-                            <div className="classNamees__details">
-                                <div className="classNamees__details__large">
-                                    <img src={`${process.env.PUBLIC_URL}/assets/images/yoga.jpg`} alt="" />
-                                    <span>Beginer</span>
-                                </div>
-                                <ul className="classNamees__details__widget">
-                                    <li><span className="icon_calendar"></span> Mon, Wed, Fri</li>
-                                    <li><span className="icon_clock_alt"></span> 18:30 - 19:30</li>
-                                </ul>
-                                <h2>100 Hour Yoga Course Rishikesh</h2>
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                    suffered that the alteration in some form by injected humour or the an randomised words
-                                    which don’t look even evry is and slightly believable. If you are going to use a passage of
-                                    Lorem Ipsum you need to be sure there isn’t is the anything aembarrassing hidden in the
-                                    middle of text.Ipsum available but the that majority have that suffered is humour or
-                                    randomised words.</p>
-                                <div className="classNamees__details__item">
-                                    <div className="row">
-                                        <div className="col-lg-4 col-md-4">
-                                            <img src="img/classNamees-details/cd-item-1.jpg" alt="" />
-                                        </div>
-                                        <div className="col-lg-8 col-md-8">
-                                            <div className="row">
-                                                <div className="col-lg-6 col-md-6">
-                                                    <img src="img/classNamees-details/cd-item-2.jpg" alt="" />
-                                                </div>
-                                                <div className="col-lg-6 col-md-6">
-                                                    <img src="img/classNamees-details/cd-item-3.jpg" alt="" />
-                                                </div>
-                                            </div>
-                                            <img src="img/classNamees-details/cd-item-4.jpg" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="classNamees__details__desc">
-                                    <h6>The Secret to improving her height to achieve quick result, If you are going to use a
-                                        passage of you need to be sure.</h6>
-                                    <ul>
-                                        <li><span className="icon_check"></span> All their equipment and instruments are alive.</li>
-                                        <li><span className="icon_check"></span> The that about to watched storm, so beautiful
-                                            terrific.</li>
-                                        <li><span className="icon_check"></span> There are many variations of passages of lorem
-                                            ppsum available.</li>
-                                        <li><span className="icon_check"></span> If you are going to use a passage of you need to be
-                                            sure.</li>
-                                    </ul>
-                                </div>
-                            </div>
+                        </nav>
+
+                        <div className="tab-content" id="nav-tabContent">
+
+                            {
+                                timetables.map((timetable) => (
+                                        <Timetable key={timetable.id} id={timetable.id} title={timetable.title} groups={timetable.groups} image={timetable.image} tag={timetable.tag}/>
+                                ))
+                            }
                         </div>
                     </div>
                 </div>
-            </section>
-            {/* classNamees Section End */}
-
+            </div>
         </section>
     )
 }

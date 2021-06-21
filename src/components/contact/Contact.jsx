@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 // componentes
 import ContactForm from './ContactForm'
 import Map from './Map'
@@ -7,7 +8,14 @@ import "./contact.css"
 
 export default function Contact() {
     return (
-        <>
+        <section className="contact">
+            {/* breadcrub */}
+            <nav aria-label="breadcrumb">
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><Link to="/">Inicio</Link></li>
+                    <li className="breadcrumb-item active" aria-current="page">Contacto</li>
+                </ol>
+            </nav>
             <img src={`${process.env.PUBLIC_URL}/assets/images/contact.jpg`} className="w-100" alt="" />
             {/* header */}
             <div className="text-secondary px-4 py-5 text-center">
@@ -24,6 +32,6 @@ export default function Contact() {
             {/* mapa */}
             <Map />
 
-        </>
+        </section>
     )
 }

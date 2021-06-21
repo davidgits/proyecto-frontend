@@ -24,16 +24,16 @@ export default function Index() {
                     <div className="carousel-caption">
                         <h2 className="carousel-caption-title">Zenshin Dojo</h2>
                         <h3>Escuela de Artes Marciales y Centro Cultural Japonés</h3>
-                        <p>Some representative placeholder content for the slides of the carousel.</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, dolores.</p>
                         <p><a className="btn btn-lg btn-primary" href="/about">Saber más</a></p>
                     </div>
                 </div>
                 <div className="container">
                     <div className="carousel-caption-off">
-                        <h2 className="section-title">Zenshin Dojo</h2>
+                        <h2 className="carousel-caption-title">Zenshin Dojo</h2>
                         <h3>Escuela de Artes Marciales y Centro Cultural Japonés</h3>
-                        <p>Some representative placeholder content for the slides of the carousel.</p>
-                        <p><a className="btn btn-md btn-primary" href="/">Saber más</a></p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, dolores.</p>
+                        <p><a className="btn btn-md btn-primary" href="/about">Saber más</a></p>
                         <hr />
                     </div>
                 </div>
